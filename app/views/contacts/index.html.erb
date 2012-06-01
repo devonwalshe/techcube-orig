@@ -1,0 +1,9 @@
+other stuff
+
+<% form_for @contact do |f| -%>
+		<%= f.label "I am a" %>
+		<%= f.select :iama, ["goober", "bossman", "wannabe"] %>
+
+	<%= f.label "Email" %>
+	<%= f.text_field :iama %>
+<% end -%>

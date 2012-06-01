@@ -1,0 +1,38 @@
+<div class="row">
+	<div class="span9">
+
+		<div class="top-twenty-margin lato fw900 t6em">
+			TechCube	
+		</div>
+		<div class="top-twenty-margin lato t1-2em block">
+			TechCube is a world class space for technology startups in Edinburgh. It provides affordable offices and services to companies trying to tackle big problems. Situated two minutes the University of Edinburgh and directly adjacent to The Meadows, TechCube is right in the middle of Edinburgh’s rapidly developing startup scene. Featuring a public space on the ground floor for hackers, artists, coffee nerds and everyone in between and a roof terrace overlooking Edinburgh’s prehistoric skyline, the site is set to become one of the most desirable places to start a tech company in Europe. 
+		</div>
+		<div class="top-twenty-margin lato">
+			TechCube is nested within the Summerhall arts complex, creating an environment where the arts and technology come together. Like MIT and New York, Edinburgh owes its great heritage to a mixing between science and culture; TechCube and Summerhall follow in this tradition. In addition to the tech focused events, tenants and visitors to TechCube have a rich pallet of arts to engage with, including an exciting avant garde festival program in August.
+		</div>
+	</div>
+	<div class="span3">
+		<div class="h150"> 
+		</div>
+		<div class="pull-right">
+			<%= form_for @contact do |f| -%>
+
+					<%= f.label :iama, "I am a" %>
+					<%= f.select :iama, ["goober", "bossman", "pretender"] %>
+				<br>
+				<%= f.text_field :email, 
+												 :style => "color:#777", 
+												 :value => "devo@test.com",
+												 :onfocus => 'this.value = ""'
+												  %>
+				<br>
+				<%= f.submit "Register your interest", :class=>"btn btn-success"%>
+
+			<% end -%>
+			<%- flash.each do |key, value| -%>
+				<div class="flash <%= key %>">
+					<%= value %>
+				</div>
+			<%- end -%>
+		</div>
+	</div>
