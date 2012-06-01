@@ -11,7 +11,8 @@ class ContactsController < ApplicationController
      @contact = Contact.new(params[:contact])
      
      if @contact.save
-        redirect_to :root, :notice => "Nice one"
+        flash[:information] = "Nice one"
+        redirect_to :root
      end
   end
 

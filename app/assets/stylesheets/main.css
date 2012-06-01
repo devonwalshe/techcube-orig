@@ -228,8 +228,28 @@ a{
   line-height:1.2em;
 }
 
+.t1-4em{
+  font-size:1.4em;
+  line-height:1.4em;
+}
+
+.t1-6em{
+  font-size:1.6em;
+  line-height:1.2em;
+}
+
+.t1-8em{
+  font-size:1.8em;
+  line-height:1em;
+}
+
 .t6em{
   font-size:6em;
+  line-height:1em;
+}
+
+.t1-8em{
+  font-size:1.8em;
   line-height:1em;
 }
 
@@ -266,6 +286,17 @@ a{
 .flash.success{
   border:1px solid #55aa55;
   background-color:#eeffee;
+  padding:15px;
+  font-weight:bold;
+   -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.flash.information{
+  border:1px solid #BCE8F1;
+  background-color:#D9EDF7;
   padding:15px;
   font-weight:bold;
    -moz-border-radius: 10px;
