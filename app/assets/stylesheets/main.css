@@ -194,6 +194,19 @@
 }
 /* Typography */
 
+a{
+  text-decoration:none;
+  color:#333;
+}
+
+.nodecoration a:hover{
+  text-decoration:underline;
+  color:#000;
+}
+.nodecoration a:visited{
+  color:#000;
+}
+
 .tbold{
   font-weight:bold;
 }
@@ -234,6 +247,10 @@
 }
 
 /* Page blocks */
+
+.center{
+  text-align:center;
+}
 
 .flash.error{
   border:1px solid #ff0033;
