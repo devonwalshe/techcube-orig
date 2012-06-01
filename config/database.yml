@@ -20,6 +20,6 @@ test:
 
 production:
   adapter: postgresql
-  username: postgres
-  pool: 5
-  timeout: 5000
+  database: tcholder
+  username: azymuth
+  password:
