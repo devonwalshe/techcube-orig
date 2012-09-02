@@ -1,0 +1,73 @@
+.container
+  .navbar
+    .navbar-inner
+      .brand
+        TechCube
+      %ul.nav
+        %li
+          %a{:href=> "#"}
+            more
+        %li
+          %a{:href=> "#"}
+            even more
+.row
+  .span9
+    .row
+      .span9
+        .well
+
+          %div{:id => "myCarousel", :class => "carousel slide"}
+            .carousel-inner
+              .active.item
+                = image_tag("/assets/tc/5.jpg")
+                .carousel-caption
+                  <p>Stuff</p>
+              .item
+                = image_tag("/assets/tc/6.jpg")
+                .carousel-caption
+                  <p>Stuff</p>
+              .item
+                = image_tag("/assets/tc/8.jpg")
+                .carousel-caption
+                  <p>Stuff</p>
+              .item
+                = image_tag("/assets/tc/6.jpg")
+                .carousel-caption
+                  <p>Stuff</p>
+              .item
+                = image_tag("/assets/tc/6.jpg")
+                .carousel-caption
+                  <p>Stuff</p>
+              %a{:href => "#myCarousel", :class=> "carousel-control left", :"data-slide"=>"prev"}
+                &lsaquo;
+              %a{:href => "#myCarousel", :class=> "carousel-control right", :"data-slide"=>"next"}
+                &rsaquo;
+          :javascript
+            $('.carousel').carousel({
+              interval: 2000
+            })
+            
+    .row
+      .span9
+        .top-twenty-margin.lato.t1-4em.block
+          TechCube is a world class space for technology startups in Edinburgh. It provides affordable offices and services to companies trying to tackle big problems. Situated two minutes the University of Edinburgh and directly adjacent to The Meadows, TechCube is right in the middle of Edinburgh’s rapidly developing startup scene. Featuring a public space on the ground floor for hackers, artists, coffee nerds and everyone in between and a roof terrace overlooking Edinburgh’s prehistoric skyline, the site is set to become one of the most desirable places to start a tech company in Europe.
+        .top-twenty-margin.lato.t1-2em
+          TechCube is nested within the Summerhall arts complex, creating an environment where the arts and technology come together. Like MIT and New York, Edinburgh owes its great heritage to a mixing between science and culture; TechCube and Summerhall follow in this tradition. In addition to the tech focused events, tenants and visitors to TechCube have a rich pallet of arts to engage with, including an exciting avant garde festival program in August.
+        .top-twenty-margin.center.tbold.t1-8em
+          %a.nodecoration{:href => "#"}
+            Read More
+            %br
+              %i.icon-circle-arrow-down
+            
+  .span3
+    .h150.well
+      = form_for @contact, :url => url_for(:controller => 'contacts', :action => 'create') do |f|
+        = f.label :iama, "I am a"
+        = f.select :iama, ["goober", "bossman", "pretender"]
+        %br
+          = f.text_field :email, :style => "color:#777", :placeholder => "email"
+          %br
+            = f.submit "Register your interest", :class=>"btn btn-success"
+      - flash.each do |key, value|
+        %div{:class => "flash #{key}"}
+          = value

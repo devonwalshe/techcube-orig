@@ -1,0 +1,30 @@
+!!!
+%html
+  %head
+    %title TechCube
+    
+    -####### Javascript #######
+    :javascript
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-29588531-2']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    %link{ :rel => "shortcut icon", :href => "/favicon.ico", :type => "image/x-icon"}
+    %link{ :href => 'http://fonts.googleapis.com/css?family=Caudex:400,700|Lato:300,400,700,900|Arvo:400,700|Cabin:400,500,600,700|Neuton:300,400,700|Istok+Web:400,700|Josefin+Sans:300,400,600,700|Bitter:400,700|Josefin+Slab:300,400,600,700|Muli:300,400|Alegreya:400,700,900|Alegreya+SC:400,700,900|Crimson+Text:400,600,700|Quattrocento+Sans:400,700|Gravitas+One', :rel => 'stylesheet', :type => 'text/css'}
+
+    
+    -######## Stylesheets #######
+    = stylesheet_link_tag    "bootstrap", :media => "all"
+    = stylesheet_link_tag    "mod_styles", :media => "all"
+    = csrf_meta_tags
+    = javascript_include_tag "jquery-1.7.2.js"
+    = javascript_include_tag "bootstrap.js"
+
+  %body
+    .container
+      = yield
