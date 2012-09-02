@@ -11,7 +11,10 @@ class ContactsController < ApplicationController
      @contact = Contact.new(params[:contact])
      
      if @contact.save
-        flash[:information] = "Nice one"
+        flash[:information] = "Thanks for signing up! You will be hearing from us shortly"
+        redirect_to :root
+     else
+        flash[:error] = @contact.errors.full_messages.to_sentence
         redirect_to :root
      end
   end

@@ -1,6 +1,6 @@
-class CreateTenantInquiries < ActiveRecord::Migration
+class CreateEnquiries < ActiveRecord::Migration
   def change
-    create_table :tenant_inquiries do |t|
+    create_table :enquiries do |t|
       t.string :email
       t.text :employees
       t.string :company

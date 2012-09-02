@@ -1,0 +1,61 @@
+.well.bgbrown
+  .inline-block.table.inline
+    .valign-top.inline-block
+      = image_tag("/assets/coffeebonds.png", :size=>"40x40")
+  .top-ten-margin.inline-block
+    .t1-8em.arvo.inline-block
+      Free Coffee! Support TechCube with Coffee Bonds
+    %a{:href=>"#myModal", :role=>"button", :class=>"btn", :"data-toggle"=>"modal", :"data-target"=> "#myModal"}
+      Find out more
+    .modal{:id=>"myModal", :class=>"modal hide fade", :tabindex=>"-1", :role=>"dialog", :"aria-labelledby"=>"myModalLabel", :"aria-hidden"=>"true"}
+      .modal-header
+        %h2{:id=>"myModalLabel"}
+          Coffee bonds
+      .modal-body
+        TechCube is a product of the community; a bootstrapped incubator that where entrepreneurs and tech people came to renovate a building in pursuit of a stronger, smarter, better environment for startups. We have always relied on the support of the community in lieu of big funding and now we are opening up the opportunity for the community to offer their support financially through “Coffee Bonds”. Coffee bonds are our way of inviting you to support our next big idea: a fully-fledged TechCafe on the ground floor of TechCube. By purchasing bonds, you’ll help us turn the open space on the ground floor into Edinburgh’s coolest new cafe space - and in return we’ll give you all the coffee you could possibly want.
+        .well.top-twenty-margin
+          %ul.unstyled
+            %li
+              £50: two months’ hotdesking membership (60 hours), plus £50 in coffee.
+            %li
+              £100: two months’ hotdesking membership (100 hours), plus £100 in coffee.
+            %li
+              £200: two months’ hotdesking membership (100 hours), plus a year’s free coffee.
+        .btn.btn-large.btn-primary.top-twenty-margin
+          Sign up for coffee bonds now
+          
+      .modal-footer
+        %button{:class=>"btn", :"data-dismiss"=>"modal", :"aria-hidden"=>"true"}
+          Close
+        
+        
+.t3em.hdividerbottom.bottom-ten-padding
+  Open Space @ TechCube
+.block.top-twenty-margin
+  %p.tbold
+    TechCube grew out of the community of startups and entrepreneurs in Edinburgh. A big part of this has always been teams and individuals who aren’t quite ready to go for office space but still need a place to work. With that in mind we are creating two spaces where you can literally get in on the ground floor. 
+
+  %p
+    We’ve got amazing coffee, free Wi-Fi, 24 hour access and seating for 80 in a 1700 sq. foot open space designed with the community in mind. This will be the space to hang out, meet up with friends, build ideas, and make things. 
+
+  %p
+    Across the hall we are offering hot-desking space for those ready to take a step up. Monthly memberships will grant you access to fully specified bookable desk space with super fast internet, phone lines, a mailing address and access to TechCube events and programmes.
+  .well.top-twenty-margin
+    .t2em.tbold.bottom-twenty-margin
+      Monthly memberships: 
+    %ul
+      %li
+        80 hours - £100/month
+      %li  
+        30 hours - £50/month
+      %li  
+        10 hours - £25/month
+    .t1-6em.top-twenty-margin.tbold.bottom-twenty-margin
+      You can also book a desk by the hour or day:
+    %ul
+      %li
+        Hourly - £10/hour
+      %li
+        Daily - £60 for 8 hours.
+        
+        

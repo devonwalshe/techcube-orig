@@ -27,4 +27,11 @@
 
   %body
     .container
-      = yield
+      = render :partial => "/layouts/header"
+      .row
+        .span9
+          = yield
+        .span3
+          =render :partial => "layouts/signup"
+  %footer.h100.hdividertop.top-twenty-margin.bggrey
+    &nbsp;

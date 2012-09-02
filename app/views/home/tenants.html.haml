@@ -1,0 +1,28 @@
+.t1-8em
+  TechCube is open to applications from any tech company based in Edinburgh or willing to relocate here. If you’re pursuing a great idea, and want to become part of the vibrant and dynamic community, get in touch.
+  
+%a{:href=>"#myModal", :role=>"button", :class=>"btn btn-large btn-success block top-bottom-twenty-margin", :"data-toggle"=>"modal", :"data-target"=> "#myModal"}
+  Sign up here
+  
+.modal{:id=>"myModal", :class=>"modal hide fade", :tabindex=>"-1", :role=>"dialog", :"aria-labelledby"=>"myModalLabel", :"aria-hidden"=>"true"}
+  .modal-header
+    %h2{:id=>"myModalLabel"}
+      Please fill in your info
+  .modal-body
+    .bottom-twenty-margin
+      
+    = form_for @inquiry, :url => url_for(:controller => 'enquiries', :action => 'create') do |f|
+      = f.text_field :company,  :placeholder => "Company Name"
+      = f.text_field :name, :placeholder => "Number of employees"
+      = f.text_field :email, :placeholder => "Email"
+      = f.text_field :name, :placeholder => "Contact Name"
+      = f.text_field :phone, :placeholder => "Phone Number"
+      .block.w150.bottom-twenty-margin
+      = f.text_area :pitch, :placeholder => "In less than 140 characters, tell us what you do", :style=>"width:450px;height:100px;"
+      %br
+      = f.submit "Sign up", :class=>"btn btn-success"
+    
+  .modal-footer
+    %button{:class=>"btn", :"data-dismiss"=>"modal", :"aria-hidden"=>"true"}
+      Close
+Our pricing is based on a tiered system which is designed to be flexible and responsive to early stage startups. We go through an assessment process before agreeing terms - so a pre-money startup will pay less than a company growing and turning a profit. TechCube provides functional, adaptable office space in a range of sizes and configurations, with market-leading comms and networking, bookable meeting rooms and plenty of cool social and breakout space - making us the destination for Edinburgh tech companies.

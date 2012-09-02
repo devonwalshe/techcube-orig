@@ -1,8 +1,15 @@
 Tc::Application.routes.draw do
+  post "enquiries/create"
+
   get "home/index"
-
-  resources :contacts
-
+  post "contacts/create"
+  
+  
+  match "home" => "home#index"
+  match "tenants" => "home#tenants"
+  match "public" => "home#public"
+  
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

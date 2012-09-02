@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(:version => 20120901153716) do
     t.string   "name"
   end
 
-  create_table "tenant_inquiries", :force => true do |t|
+  create_table "enquiries", :force => true do |t|
     t.string   "email"
     t.text     "employees"
     t.string   "company"

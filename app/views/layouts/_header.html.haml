@@ -1,0 +1,36 @@
+.tbold.inline.table
+  .valign-top.inline-block.top-ten-margin
+    = image_tag("/assets/tesseract.gif", :size => "65x65")
+.top-ten-margin.inline-block
+  .josefin-sans.t4em.tbold.inline-block.left-ten-margin
+    TechCube
+  (insert appropriate logo here)
+
+.container
+  .navbar
+    .navbar-inner
+      %ul.nav
+        -if params[:action] == "index"
+          %li.active
+            %a{:href=>"home"}
+              Home
+        -else
+          %li
+            %a{:href=>"home"}
+              Home
+        -if params[:action] == "tenants"
+          %li.active
+            %a{:href=>"tenants"}
+              Tenants
+        -else
+          %li
+            %a{:href=>"tenants"}
+              Tenants
+        -if params[:action] == "public"
+          %li.active
+            %a{:href=>"public"}
+              Freelance / public space
+        -else
+          %li
+            %a{:href=>"public"}
+              Freelance / public space

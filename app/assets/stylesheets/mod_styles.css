@@ -614,30 +614,38 @@ body{
 
 .t1-2em{
   font-size:1.2em;
+  line-height:1em;
+  
 }
 
 .t1-4em{
   font-size:1.4em;
+  line-height:1em;
 }
 
 .t1-6em{
   font-size:1.6em;
+  line-height:1em;
 }
 
 .t1-8em{
   font-size:1.8em;
+  line-height:1em;
 }
 
 .t2em{
   font-size:2em;
+  line-height:1em;
 }
 
 .t2-5em{
   font-size:2.5em;
+  line-height:1em;
 }
 
 .t6em{
   font-size:6em;
+  line-height:1em;
 }
 
 .t4em{
@@ -652,10 +660,12 @@ body{
 
 .t1-8em{
   font-size:1.8em;
+  line-height:1em;
 }
 
 .t10em{
   font-size:10em;
+  line-height:1em;
 }
 
 .tline-height{
@@ -847,6 +857,10 @@ body{
 
 .bgblack{
   background-color:rgb(255,72,74);
+}
+
+.bgbrown{
+  background-color:#EDB883;
 }
 
 .bgred{
