@@ -19,6 +19,12 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
+
+group :development do
+
+  gem 'debugger'
+  gem 'ruby-debug19', :require => 'ruby-debug'
+end
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'provisioning-api'
@@ -35,6 +41,3 @@ gem 'provisioning-api'
 # gem 'capistrano'
 
 # To use debugger
-gem 'debugger'
-gem 'ruby-debug19', :require => 'ruby-debug'
-gem 'mail'

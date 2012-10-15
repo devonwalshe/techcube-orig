@@ -1,5 +1,5 @@
 class EnquiryMailer < ActionMailer::Base
-  default :from => "no-reply@techcu.be"
+  default :from => "noreply@techcu.be"
   
   def enquiry_notification_email(enquiry)
     @enquiry = enquiry

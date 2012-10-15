@@ -135,7 +135,6 @@ DEPENDENCIES
   debugger
   haml-rails
   jquery-rails
-  mail
   pg
   provisioning-api
   rails (= 3.2.5)
