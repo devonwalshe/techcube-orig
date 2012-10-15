@@ -15,4 +15,3 @@ ActionMailer::Base.smtp_settings = {
   :authentication => "login"
 }
 
-config.action_mailer.raise_delivery_errors = true

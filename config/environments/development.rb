@@ -36,6 +36,6 @@ Tc::Application.configure do
   config.assets.debug = true
   
   # Mailer configuration
-
+  config.action_mailer.raise_delivery_errors = true
   
 end
