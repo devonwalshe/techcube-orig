@@ -21,7 +21,7 @@ group :assets do
 end
 gem 'haml-rails'
 gem 'jquery-rails'
-
+gem 'provisioning-api'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -35,4 +35,6 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 # To use debugger
-# gem 'debugger'
+gem 'debugger'
+gem 'ruby-debug19', :require => 'ruby-debug'
+gem 'mail'

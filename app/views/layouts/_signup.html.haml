@@ -1,13 +1,14 @@
+- flash.each do |key, value|
+  .bottom-ten-margin
+    %div{:class => "flash #{key}"}
+      = value
 .well
   .josefin-slab.t2em.tbold.bottom-twenty-margin
     Sign up for our mailing list
   = form_for @contact, :url => url_for(:controller => 'contacts', :action => 'create') do |f|
     = f.text_field :name,  :placeholder => "name"
-    = f.text_field :email, :placeholder => "email"
+    = f.text_field :email, :placeholder => "email", :class=>"small"
     = f.label :iama, "I am"
     = f.select :iama, ["working in a startup", "an investor", "a services provider", "a student", "just interested"]
     %br
     = f.submit "Sign up", :class=>"btn btn-success"
-  - flash.each do |key, value|
-    %div{:class => "flash #{key}"}
-      = value

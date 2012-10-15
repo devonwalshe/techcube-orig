@@ -1,9 +1,14 @@
+#!/usr/bin/ruby
+require 'provisioning-api'
+include GAppsProvisioning
+
 class EnquiriesController < ApplicationController
   def create
-    @enquiry = Enquiry.new(params[:enquiry])
     
+    @enquiry = Enquiry.new(params[:enquiry])
     if @enquiry.save
-       flash[:information] = "Thanks for signing up! We will be in touch with more info"
+       EnquiryMailer.enquiry_notification_email(@enquiry).deliver
+       flash[:information] = "Thanks for sending us your information! Someone will be in touch shortly"
        redirect_to "/tenants"
     else
       flash[:error] = @inquiry.errors.full_messages.to_sentence
@@ -11,4 +16,9 @@ class EnquiriesController < ApplicationController
     end
     
   end
+  
+  private
+  
+  
+  
 end
