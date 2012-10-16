@@ -43,4 +43,3 @@ gem 'provisioning-api'
 
 # To use debugger
 
-gem 'mail'
