@@ -1,8 +1,13 @@
-.tbold.inline.table
+
+.tbold.inline-block
   .valign-top.inline-block.top-ten-margin
-    = image_tag("/assets/temp_logo.png", :size => "300x50")
-.top-ten-margin.inline-block
-  World class space for startups in Edinburgh
+    .dosis.tw200.t4em
+      TechCube
+      %span{:class=>"t0-4em"}
+        World class startup space in Edinburgh
+    -# = image_tag("/assets/temp_logo.png", :size => "300x50")
+.inline-block
+  
 
 .container
   .navbar
@@ -19,16 +24,16 @@
         -if params[:action] == "tenants"
           %li.active
             %a{:href=>"tenants"}
-              Tenants
+              Tenant information
         -else
           %li
             %a{:href=>"tenants"}
-              Tenants
+              Tenant information
         -if params[:action] == "public"
           %li.active
             %a{:href=>"public"}
-              Freelance / public space
+              Community
         -else
           %li
             %a{:href=>"public"}
-              Freelance / public space
+              Community

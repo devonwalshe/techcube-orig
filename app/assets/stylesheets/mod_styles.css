@@ -498,14 +498,19 @@
 }
 
 body{
-  font-family: "Lato";
+  font-family: "Dosis";
 }
 
 .bitter{
   font-family: "Bitter";
 }
+
 .caudex{
   font-family: "Caudex";
+}
+
+.dosis{
+  font-family: "Dosis";
 }
 
 .josefin-sans{
@@ -572,6 +577,14 @@ body{
   font-weight: 400;
 }
 
+.tw200{
+  font-weight: 200;
+}
+
+.tw300{
+  font-weight: 300;
+}
+
 .tw900 {
   font-weight:900;
 }
@@ -590,6 +603,14 @@ body{
 
 .tblack{
   color: #000;
+}
+
+.t0-4em{
+  font-size:0.4em;
+}
+
+.t0-5em{
+  font-size:0.5em;
 }
 
 .t0-6em{
@@ -672,7 +693,9 @@ body{
   line-height:1em;
 }
 
-
+.lh1-2{
+  line-height:1.2em;
+}
 
 /* Postioning */
 
@@ -802,6 +825,13 @@ body{
   display:inline;
 }
 
+.relative{
+  position:relative;
+}
+
+.absolute{
+  position:absolute;
+}
 
 .image-overlay {
   position:relative;
