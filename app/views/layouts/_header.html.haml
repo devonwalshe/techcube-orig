@@ -1,13 +1,11 @@
-
-.tbold.inline-block
-  .valign-top.inline-block.top-ten-margin
-    .dosis.tw200.t4em
-      TechCube
-      %span{:class=>"t0-4em"}
-        World class startup space in Edinburgh
+.block.top-bottom-twenty-margin
+  .inline-block
+    = image_tag("/assets/logo/tc_logo_colour.png", :size => "300x50")
+  .inline-block
+    .relative.t1-8em.bold{:style => "bottom:-40px; left:-170px"}
+      World class startup space in Edinburgh
     -# = image_tag("/assets/temp_logo.png", :size => "300x50")
-.inline-block
-  
+
 
 .container
   .navbar
@@ -24,11 +22,11 @@
         -if params[:action] == "tenants"
           %li.active
             %a{:href=>"tenants"}
-              Tenant information
+              Tenants
         -else
           %li
             %a{:href=>"tenants"}
-              Tenant information
+              Tenants
         -if params[:action] == "public"
           %li.active
             %a{:href=>"public"}
@@ -37,3 +35,11 @@
           %li
             %a{:href=>"public"}
               Community
+        -if params[:action] == "mission"
+          %li.active
+            %a{:href=>"mission"}
+              Mission
+        -else
+          %li
+            %a{:href=>"mission"}
+              Mission

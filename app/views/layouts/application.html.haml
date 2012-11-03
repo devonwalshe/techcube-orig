@@ -14,7 +14,7 @@
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
-    %link{ :rel => "shortcut icon", :href => "/favicon.ico", :type => "image/x-icon"}
+    %link{ :rel => "shortcut icon", :href => "/assets/favicon.ico", :type => "image/x-icon"}
     %link{ :href => 'http://fonts.googleapis.com/css?family=Caudex:400,700|Lato:300,400,700,900|Arvo:400,700|Cabin:400,500,600,700|Neuton:300,400,700|Istok+Web:400,700|Josefin+Sans:300,400,600,700|Bitter:400,700|Josefin+Slab:300,400,600,700|Muli:300,400|Alegreya:400,700,900|Alegreya+SC:400,700,900|Crimson+Text:400,600,700|Quattrocento+Sans:400,700|Gravitas+One|Dosis:200,300,400,500', :rel => 'stylesheet', :type => 'text/css'}
 
     
@@ -32,13 +32,14 @@
           max-width:100%;
       }
 
-  %body
+  %body.bgbeige
     .container
       = render :partial => "/layouts/header"
       .row
         .span9
           = yield
         .span3
-          =render :partial => "layouts/signup"
+          =render :partial => "layouts/sidebar"
   %footer.h100.hdividertop.top-twenty-margin.bggrey
-    &nbsp;
+    .container
+      Footer

@@ -1,0 +1,62 @@
+.row
+  .span3
+    :javascript
+      function initialize() {
+        var mapOptions = {
+          center: new google.maps.LatLng(55.945, -3.185),
+          zoom: 15,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+
+        var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+        // var contentString = 'get with this';
+
+        var infowindow = new google.maps.InfoWindow({
+            content: 'get with this',
+            maxwidth: 150
+        });
+        
+        var cube_image = "http://gubbins.s3.amazonaws.com/favicon.ico"
+        
+        var marker = new google.maps.Marker({
+           icon: cube_image,
+           position:  new google.maps.LatLng(55.945, -3.185),
+           map: map,
+           title: "whats up!"
+        });
+
+        //google.maps.event.addListener(marker, 'click', function() {
+        //  infowindow.open(map,marker);
+        //});
+
+      }
+
+      function loadScript() {
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "http://maps.googleapis.com/maps/api/js?key=AIzaSyDSxwX0QVXxSm2-rHIisLXOSrj5Lw2ZINs&sensor=false&callback=initialize";
+        document.body.appendChild(script);
+      }
+
+      window.onload = loadScript;
+
+    #map_canvas.bottom-twenty-margin{:style => "width:220px; height:220px"}
+      
+      -# %img{:src => "http://maps.googleapis.com/maps/api/staticmap?center=Edinburgh&zoom=13&size=450x90&markers=color:red|55.95,-3.22&sensor=false&scale=2"}/
+            
+.row
+  .span3
+    - flash.each do |key, value|
+      .bottom-ten-margin
+        %div{:class => "flash #{key}"}
+          = value
+
+    .dosis.tw400.t2em.bottom-twenty-margin
+      Sign up for our mailing list
+    = form_for @contact, :url => url_for(:controller => 'contacts', :action => 'create') do |f|
+      = f.text_field :name,  :placeholder => "name"
+      = f.text_field :email, :placeholder => "email", :class=>"small"
+      = f.label :iama, "I am"
+      = f.select :iama, ["working in a startup", "an investor", "working in professional services", "a student", "just interested"]
+      %br
+      = f.submit "Sign up", :class=>"btn btn-success pull-right"
