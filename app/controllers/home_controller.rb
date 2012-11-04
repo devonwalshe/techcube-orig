@@ -9,10 +9,13 @@ class HomeController < ApplicationController
     @inquiry = Enquiry.new
   end
   
-  def public
+  def community
     @contact = Contact.new
   end
   
+  def mission
+    @contact = Contact.new
+  end
   
   
 end

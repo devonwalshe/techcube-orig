@@ -29,6 +29,8 @@ end
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'provisioning-api'
+gem 'bootstrap-datepicker-rails'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

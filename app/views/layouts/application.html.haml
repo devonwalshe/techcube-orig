@@ -21,9 +21,11 @@
     -######## Stylesheets #######
     = stylesheet_link_tag    "bootstrap", :media => "all"
     = stylesheet_link_tag    "mod_styles", :media => "all"
+    = stylesheet_link_tag    "home", :media => "all"
     = csrf_meta_tags
     = javascript_include_tag "jquery-1.7.2.js"
     = javascript_include_tag "bootstrap.js"
+    = javascript_include_tag "application.js"
     :css
       input {
           max-width: 100%;
@@ -40,6 +42,38 @@
           = yield
         .span3
           =render :partial => "layouts/sidebar"
-  %footer.h100.hdividertop.top-twenty-margin.bggrey
+  %footer.hdividertop.top-twenty-margin.bggrey
     .container
-      Footer
+      .top-twenty-margin
+        .row
+          .span4
+            .t2em.tw400
+              As seen in
+            .block.top-twenty-margin
+              =image_tag("/assets/scotsman.png", :size=>"150x20")
+            .block.top-twenty-margin
+              =image_tag("/assets/sync.png", :size=>"75x20")
+          .span4
+            .t2em.tw400
+              Partners
+            .block.top-twenty-margin
+              =image_tag("/assets/summerhall.png", :size=>"150x20")
+            .block.top-twenty-margin
+              =image_tag("/assets/skyscanner.png", :size=>"150x20")
+            .block.top-twenty-margin
+              =image_tag("/assets/freeagent.png", :size=>"150x20")
+          .span4
+            .t2em.tw400
+              Contact
+            .block.top-twenty-margin
+              TechCube
+              %br
+              1 Summerhall
+              %br
+              Edinburgh EH9 1QH
+              %br
+              %a{:href => "mailto:info@techcu.be"}
+                info@techcu.be
+                
+              
+              
