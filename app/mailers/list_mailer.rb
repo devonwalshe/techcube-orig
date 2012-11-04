@@ -3,7 +3,7 @@ class ListMailer < ActionMailer::Base
   
   def mailing_list_notification_email(signup)
     @signup = signup
-    mail(:to => "test_list@techcu.be", :subject => "NEW MAILING LIST SIGNUP - #{@signup.email} - #{@signup.name} - is #{@signup.iama}")
+    mail(:to => "notifications@techcu.be", :subject => "NEW MAILING LIST SIGNUP - #{@signup.email} - #{@signup.name} - is #{@signup.iama}")
     
   end
 end

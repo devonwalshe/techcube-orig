@@ -3,7 +3,7 @@ class EnquiryMailer < ActionMailer::Base
   
   def enquiry_notification_email(enquiry)
     @enquiry = enquiry
-    mail(:to => "test_list@techcu.be", :subject => "NEW ENQUIRY - #{@enquiry.company}")
+    mail(:to => "notifications@techcu.be", :subject => "NEW ENQUIRY - #{@enquiry.company}")
     
   end
 end
