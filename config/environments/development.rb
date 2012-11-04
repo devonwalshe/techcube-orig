@@ -40,7 +40,7 @@ Tc::Application.configure do
     :address              => "smtp.gmail.com",
     :port                 => 587,
     :domain               => 'gmail.com',
-    :user_name            => 'noreply@techcu.be',
+    :user_name            => 'TC-bot@techcu.be',
     :password             => 't3chcub3',
     :authentication       => 'plain',
     :enable_starttls_auto => true  }

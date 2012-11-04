@@ -178,11 +178,12 @@
     %h2{:id=>"myModalLabel"}
       Please fill in your info
   .modal-body
-    .bottom-twenty-margin
-      
+    .bottom-twenty-margin.tbold
+      All fields are optional, but we recommend you fill them in
+    .bottom-ten-margin
     = form_for @inquiry, :url => url_for(:controller => 'enquiries', :action => 'create') do |f|
       = f.text_field :company,  :placeholder => "Company name"
-      = f.text_field :name, :placeholder => "Number of employees"
+      = f.text_field :employees, :placeholder => "Number of employees"
       = f.text_field :email, :placeholder => "Email"
       = f.text_field :name, :placeholder => "Contact name"
       = f.text_field :phone, :placeholder => "Phone number"

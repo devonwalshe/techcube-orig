@@ -1,4 +1,6 @@
-
+#!/usr/bin/ruby
+require 'gappsprovisioning/provisioningapi'
+include GAppsProvisioning
 class ContactsController < ApplicationController
   def index
   end
@@ -11,6 +13,7 @@ class ContactsController < ApplicationController
      @contact = Contact.new(params[:contact])
      @google_apps_connection ||= ProvisioningApi.new(GOOGLE_APPS_CONFIG['username'], GOOGLE_APPS_CONFIG['password'])
      if @contact.save
+        ListMailer.mailing_list_notification_email(@contact).deliver
         flash[:information] = "Thanks for signing up! You will be hearing from us shortly"
         add_user_to_google_group(@google_apps_connection, params[:contact][:email], "mailing_list")
         redirect_to :root

@@ -58,15 +58,16 @@
   
       -# %img{:src => "http://maps.googleapis.com/maps/api/staticmap?center=Edinburgh&zoom=13&size=450x90&markers=color:red|55.95,-3.22&sensor=false&scale=2"}/
 
-
-#map_canvas.bottom-twenty-margin{:style => "width:220px; height:220px; border:1px solid #aaa"}           
 .row
   .span3
     - flash.each do |key, value|
       .bottom-ten-margin
         %div{:class => "flash #{key}"}
           = value
+#map_canvas.bottom-twenty-margin{:style => "width:220px; height:220px; border:1px solid #aaa"}           
 
+.row
+  .span3
     .dosis.tw400.t2em.bottom-twenty-margin
       Sign up for our mailing list
     = form_for @contact, :url => url_for(:controller => 'contacts', :action => 'create') do |f|

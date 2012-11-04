@@ -3,7 +3,25 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
   %body
-    This is a message body
+    New enquiry from
+    =@enquiry.company
     %br
-    This is the name of a company: 
-    = @enquiry.company
+    Contact name:  
+    = @enquiry.name
+    %br
+    Contact email:  
+    = @enquiry.email
+    %br
+    Contact phone:  
+    = @enquiry.phone
+    %br
+    employees:  
+    = @enquiry.employees
+    %br
+    pitch:  
+    = @enquiry.pitch
+    %br
+    Move in date:  
+    = @enquiry.movein_date.strftime("%m/%d/%Y")
+    
+Thanks - TC bot :)
