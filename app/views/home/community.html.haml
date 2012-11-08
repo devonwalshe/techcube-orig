@@ -1,25 +1,121 @@
-.block.t1-2em.lh1-2
-  %p.tbold
-    TechCube is a product of the community; a bootstrapped incubator that where entrepreneurs and tech people came to renovate a building in pursuit of a stronger, smarter, better environment for startups. TechCube is not a closed ecosystem limited to the tenants who work here: we want it to be an open hub for the community. That’s why we’re creating awesome community spaces on our ground floor, and why we will be organising and hosting a year-round programme of events and parties, to give the community a chance to come together, unwind and share knowledge. 
+.bgblue
+  .container
+    .top-twenty-margin
+      .row
+        .span9
+          .border.bottom-twenty-margin.relative
+            .absolute{:style=>"bottom:30px; left:0px; opacity:0.8; background-color:#eee; padding:15px; width:445px"}
+              .t2-5em.pull-right{:style=>"opacity:1"}
+                An open community hub
+            =image_tag("/assets/tc.jpg")
+        .span3
+          .row
+            .span3
+              - flash.each do |key, value|
+                .bottom-ten-margin
+                  %div{:class => "flash #{key}"}
+                    = value
+          .row
+            .span3
+              =render :partial => "layouts/sidebar"
 
-  %h1
-    Hotdesking and coworking
-  %p
-    TechCube is a product of the hard work of a community of startups and entrepreneurs in Edinburgh who wanted to create a great new resource for the tech scene – including and especially teams and individuals who aren’t quite ready to go for permanent office space but still need a place to work. With that in mind we are creating two spaces where you can literally get in on the ground floor.
-  %p
-    We’ve got coffee, free Wi-Fi, and seating for 80 in a 1700 square foot open space designed with the community in mind. This will be the space to hang out, meet up with friends, build ideas, and make things. Across the hall we are offering hot-desking and space for those ready to take a step up. Membership will grant you 24-hour access to fully specified bookable desk space with super-fast internet, phone lines, a mailing address and access to TechCube events and programmes.
+.container
+  .row
+    .span9
+      .well.top-twenty-margin
+        .t1-6em.tw200{:style=>"line-height:1.2em"}
+          TechCube is a product of the community; a bootstrapped incubator where entrepreneurs and tech people came to renovate a building in pursuit of a stronger, smarter, better environment for startups. TechCube is not a closed ecosystem limited to the tenants who work here: we want it to be an open hub for the community. That’s why we’re creating awesome community spaces on our ground floor, and why we will be organising and hosting a year-round programme of events and parties, to give the community a chance to come together, unwind and share knowledge. 
+
+      .row
+        .span9
+          .t2-5em.top-bottom-twenty-margin
+            Hotdesking and coworking
+          %p
+            TechCube is a product of the hard work of a community of startups and entrepreneurs in Edinburgh who wanted to create a great new resource for the tech scene – including and especially teams and individuals who aren’t quite ready to go for permanent office space but still need a place to work. With that in mind we are creating two spaces where you can literally get in on the ground floor.
+          %p
+            We’ve got coffee, free Wi-Fi, and seating for 80 in a 1700 square foot open space designed with the community in mind. This will be the space to hang out, meet up with friends, build ideas, and make things. Across the hall we are offering hot-desking and space for those ready to take a step up. Membership will grant you 24-hour access to fully specified bookable desk space with super-fast internet, phone lines, a mailing address and access to TechCube events and programmes.
   
-  %h1
-    Events
-  %p
-    We’re not all work and no play at TechCube: the social side of the startup scene and the importance of networking are at the very heart of what we’re trying to do here. We will be putting on a busy series of top-flight speakers, parties and networking events, so watch this space.
-  %h1
-    Capital
-  %p
-    A big part of our mission for TechCube is to attract new investment into the Scottish tech sector. Unusually for Scotland, TechCube has been built entirely with private capital, and with the specific goal of attracting international venture capital and angel investment into Scotland’s incredible startups.
-  %p
-    We will be announcing a major step towards making this goal a reality soon, so watch this space!
-  %h1
-    Our Friends
-  %p
-    We’re very grateful for the support and advice we’ve received from some of Edinburgh’s biggest and best startups, particularly Skyscanner and FreeAgent.
+      .row
+        .span4
+          .t2-5em.top-bottom-twenty-margin
+            Events
+            %p
+          .t1em
+            We’re not all work and no play at TechCube: the social side of the startup scene and the importance of networking are at the very heart of what we’re trying to do here. We will be putting on a busy series of top-flight speakers, parties and networking events, so watch this space.
+
+        .span5
+          .t2-5em.top-bottom-twenty-margin
+            Capital
+          .t1em
+            A big part of our mission for TechCube is to attract new investment into the Scottish tech sector. Unusually for Scotland, TechCube has been built entirely with private capital, and with the specific goal of attracting international venture capital and angel investment into Scotland’s incredible startups.
+          %p
+          %br
+            We will be announcing a major step towards making this goal a reality soon, so watch this space!
+      .row
+        .span9
+          .t2-5em.top-bottom-twenty-margin
+            Our Friends
+          .t1em
+            We’re very grateful for the support and advice we’ve received from some of Edinburgh’s biggest and best startups, particularly Skyscanner and FreeAgent.
+    .span3
+      .top-twenty-margin
+        .t2em.bottom-twenty-margin
+          Where we are
+        #map_canvas.bottom-twenty-margin{:style => "width:220px; height:220px; border:1px solid #aaa"}
+      :javascript
+        function initialize() {
+          var mapOptions = {
+            center: new google.maps.LatLng(55.939959, -3.182275,326247,672509),
+            zoom: 15,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            disableDefaultUI: true
+          };
+
+          var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+          // var contentString = 'get with this';
+
+          var infowindow = new google.maps.InfoWindow({
+              content: 'get with this',
+              maxwidth: 150
+          });
+
+          var cube_image = "http://gubbins.s3.amazonaws.com/tc_logo_box_colour_small.png"
+
+          var marker = new google.maps.Marker({
+             icon: cube_image,
+             position:  new google.maps.LatLng(55.939959, -3.182),
+             map: map,
+             title: "whats up!"
+          });
+
+          var panoramaOptions = {
+
+            position: new google.maps.LatLng(55.9406, -3.1831),
+            pov:{
+              heading:34,
+              pitch:10,
+              zoom:1
+            }
+          };
+
+         // var panorama = new google.maps.StreetViewPanorama(document.getElementById("pano"), panoramaOptions);
+
+          //google.maps.event.addListener(marker, 'click', function() {
+          //  infowindow.open(map,marker);
+          //});
+
+        }
+
+        function loadScript() {
+          var script = document.createElement("script");
+          script.type = "text/javascript";
+          script.src = "http://maps.googleapis.com/maps/api/js?key=AIzaSyDSxwX0QVXxSm2-rHIisLXOSrj5Lw2ZINs&sensor=false&callback=initialize";
+          document.body.appendChild(script);
+        }
+
+        window.onload = loadScript;
+
+      %a{:href => "http://bit.ly/SkKZTh", :target => "blank"}
+
+
+        -# %img{:src => "http://maps.googleapis.com/maps/api/staticmap?center=Edinburgh&zoom=13&size=450x90&markers=color:red|55.95,-3.22&sensor=false&scale=2"}/

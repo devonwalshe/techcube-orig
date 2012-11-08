@@ -35,25 +35,20 @@
       }
 
   %body.bgbeige
-    .container
-      = render :partial => "/layouts/header"
-      .row
-        .span9
-          = yield
-        .span3
-          =render :partial => "layouts/sidebar"
+    = render :partial => "/layouts/header"
+    = yield
   %footer.hdividertop.top-twenty-margin.bggrey
     .container
       .top-twenty-margin
         .row
-          .span4
+          .span3
             .t2em.tw400
               As seen in
             .block.top-twenty-margin
               =image_tag("/assets/scotsman.png", :size=>"150x20")
             .block.top-twenty-margin
               =image_tag("/assets/sync.png", :size=>"75x20")
-          .span4
+          .span3
             .t2em.tw400
               Partners
             .block.top-twenty-margin
@@ -62,7 +57,7 @@
               =image_tag("/assets/skyscanner.png", :size=>"150x20")
             .block.top-twenty-margin
               =image_tag("/assets/freeagent.png", :size=>"150x20")
-          .span4
+          .span3
             .t2em.tw400
               Contact
             .block.top-twenty-margin
@@ -74,6 +69,10 @@
               %br
               %a{:href => "mailto:info@techcu.be"}
                 info@techcu.be
+          .span3
+            facebook
+            %br
+            twitter
                 
               
               

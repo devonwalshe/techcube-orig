@@ -1,14 +1,17 @@
-.block.top-bottom-twenty-margin
-  .inline-block
-    = image_tag("/assets/logo/tc_logo_colour_header.png", :size => "500x70")
-  -# .inline-block
-  -#   .relative.t1-8em.bold{:style => "bottom:-40px; left:-170px"}
-  -#     World class startup space in Edinburgh
-    -# = image_tag("/assets/temp_logo.png", :size => "300x50")
+.container
+  .block.top-bottom-twenty-margin
+    .inline-block
+      = image_tag("/assets/logo/tc_logo_colour_header.png", :size => "500x70")
+    -# .inline-block
+    -#   .relative.t1-8em.bold{:style => "bottom:-40px; left:-170px"}
+    -#     World class startup space in Edinburgh
+      -# = image_tag("/assets/temp_logo.png", :size => "300x50")
+
+
 
 
 .container
-  .navbar
+  .navbar{:style=>"margin-bottom:0px"}
     .navbar-inner
       %ul.nav
         -if params[:action] == "index"
