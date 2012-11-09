@@ -57,8 +57,8 @@
       .top-ten-margin.bottom-ten-padding{:style => "border-bottom:1px solid #aaa"}
         .row
           .span2
-            .w150.h150{:style => "border:1px solid #aaa"}
-              logo
+            .w150{:style => "border:1px solid #aaa; "}
+              =image_tag("/assets/fanduel_square.png", :size => "150x150")
           .span6
             .row
               .span6
@@ -70,15 +70,15 @@
             .row
               .span6
                 .top-ten-margin
-                  %a.tbold.t1-2em{:href => "http://www.fanduel.com"}
-                    www.fanduel.com
+                  %a.tbold.t1-2em{:href => "http://www.fanduel.com", :target => "_blank"}
+                    http://www.fanduel.com
   .row
     .span9
       .top-ten-margin.bottom-ten-padding{:style => "border-bottom:1px solid #aaa"}
         .row
           .span2
-            .w150.h150{:style => "border:1px solid #aaa"}
-              logo
+            .w150{:style => "border:0px solid #aaa"}
+              =image_tag("/assets/float_square.png", :size => "150x150")
           .span6
             .row
               .span6
@@ -90,8 +90,8 @@
             .row
               .span6
                 .top-ten-margin
-                  %a.tbold.t1-2em{:href => "http://www.fanduel.com"}
-                    www.floatapp.com
+                  %a.tbold.t1-2em{:href => "http://www.floatapp.com", :target => "_blank"}
+                    http://www.floatapp.com
 
   .row
     .span9
@@ -99,7 +99,7 @@
         .row
           .span2
             .w150.h150{:style => "border:1px solid #aaa"}
-              logo
+              =image_tag("/assets/tigerface.png", :size => "150x150")
           .span6
             .row
               .span6
@@ -111,7 +111,7 @@
             .row
               .span6
                 .top-ten-margin
-                  %a.tbold.t1-2em{:href => "http://www.fanduel.com"}
+                  %a.tbold.t1-2em{:href => "http://www.tigerfacegames.com/", :target => "_blank"}
                     http://www.tigerfacegames.com/
 
   .row
@@ -132,7 +132,7 @@
             .row
               .span6
                 .top-ten-margin
-                  %a.tbold.t1-2em{:href => "http://www.fanduel.com"}
+                  %a.tbold.t1-2em{:href => "http://www.newcontext.com/", :target => "_blank"}
                     http://www.newcontext.com/
 
   .row
@@ -140,8 +140,8 @@
       .top-ten-margin.bottom-ten-padding{:style => "border-bottom:1px solid #aaa"}
         .row
           .span2
-            .w150.h150{:style => "border:1px solid #aaa"}
-              logo
+            .w150.h150{:style => "border:1px solid #aaa; background:#fff"}
+              =image_tag("/assets/pfc.png", :size => "150x150")
           .span6
             .row
               .span6
@@ -153,15 +153,15 @@
             .row
               .span6
                 .top-ten-margin
-                  %a.tbold.t1-2em{:href => "http://www.fanduel.com"}
-                    http://www.PlanForCloud.com/
+                  %a.tbold.t1-2em{:href => "http://www.planforcloud.com/", :target => "_blank"}
+                    http://www.planforcloud.com/
   .row
     .span9
       .top-ten-margin.bottom-ten-padding{:style => "border-bottom:1px solid #aaa"}
         .row
           .span2
             .w150.h150{:style => "border:1px solid #aaa"}
-              logo
+              =image_tag("/assets/swa.png", :size => "150x150")
           .span6
             .row
               .span6
@@ -169,11 +169,11 @@
                   Software Alliance
             .row
               .span6
-              
+                Software Alliance is the creator of Mo.net®, a cutting edge actuarial financial modelling platform used by insurance companies and actuarial consultancies across the globe
             .row
               .span6
                 .top-ten-margin
-                  %a.tbold.t1-2em{:href => "http://www.fanduel.com"}
+                  %a.tbold.t1-2em{:href => "http://www.softwarealliance.com/", :target => "_blank"}
                     http://www.softwarealliance.com/
 
   .row
@@ -182,7 +182,7 @@
         .row
           .span2
             .w150.h150{:style => "border:1px solid #aaa"}
-              logo
+              =image_tag("/assets/journal.png", :size => "150x150")
           .span6
             .row
               .span6
@@ -190,11 +190,11 @@
                   The Journal
             .row
               .span6
-              
+                The Journal is a local media platform that produces premium print and online content for students. Editors and writers volunteer to receive professional, high calibre experience in the media while the readership receives a respected, qualified voice in the local community.
             .row
               .span6
                 .top-ten-margin
-                  %a.tbold.t1-2em{:href => "http://www.fanduel.com"}
+                  %a.tbold.t1-2em{:href => "http://www.journal-online.com/", :target => "_blank"}
                     http://www.journal-online.com/
 
   .modal{:id=>"myModal", :class=>"modal hide fade", :tabindex=>"-1", :role=>"dialog", :"aria-labelledby"=>"myModalLabel", :"aria-hidden"=>"true"}
