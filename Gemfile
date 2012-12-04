@@ -30,6 +30,8 @@ gem 'haml-rails'
 gem 'jquery-rails'
 gem 'provisioning-api'
 gem 'bootstrap-datepicker-rails'
+gem "mailchimp", "~> 0.0.7.alpha"
+gem 'nokogiri'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

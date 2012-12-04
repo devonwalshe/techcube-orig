@@ -22,6 +22,14 @@
           %li
             %a{:href=>"home"}
               Home
+        -if params[:action] == "news"
+          %li.active
+            %a{:href=>"news"}
+              News
+        -else
+          %li
+            %a{:href=>"news"}
+              News
         -if params[:action] == "tenants"
           %li.active
             %a{:href=>"tenants"}
