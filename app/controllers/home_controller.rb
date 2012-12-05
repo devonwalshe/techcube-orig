@@ -30,7 +30,7 @@ class HomeController < ApplicationController
   private
   
   def get_tumblr_articles
-    uri = URI.parse("http://techcube-ed.tumblr.com/api/read")
+    uri = URI.parse("http://blog.techcu.be/api/read?start=0&num=5")
     http = Net::HTTP.new(uri.host, uri.port)
     response = http.request(Net::HTTP::Get.new(uri.request_uri))
     xml = Nokogiri::XML::Document.parse(response.body)
