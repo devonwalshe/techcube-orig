@@ -3,18 +3,32 @@
     .span9
       .top-twenty-margin.t2em{:style => "border-bottom:1px solid #999"}
         News
-      - @articles.each do |article|
-        .block.top-twenty-margin
-          &nbsp;
-          .pull-left.t2em
-            %a{:href => "#{article["url"]}"}
-              =article["regular_title"]
-          .pull-right
-            =article["date"]
+      - @articles.each_with_index do |article, index|
+        .twenty-padding.three-rounded.top-twenty-margin.box-shadow{:style => "background-color:#eee"}
+          .block
+            &nbsp;
+            .pull-left.t2em
+              - if article["type"] == "photo"
+                %a{:href => "#{article["url"]}"}
+                  New Photos
+              %a{:href => "#{article["url"]}"}
+                =article["regular_title"]
+            .pull-right
+              =article["date"]
 
-        .block.top-twenty-margin
-          =article["regular_body"].html_safe
-
+          .block.top-bottom-twenty-margin
+            - if article["type"] == "photo"
+              .t1-4em.top-bottom-twenty-margin
+                =article["photo_caption"].html_safe
+              
+              -article["images"].each do |image|
+                
+                =image_tag(image["url"])
+                <br>
+                .top-twenty-margin
+                  =image["caption"]
+            -else
+              =article["regular_body"].html_safe
     .span3
       .row
         .span3

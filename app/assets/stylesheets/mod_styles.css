@@ -234,6 +234,13 @@
   border-radius: 20px;
 }
 
+.three-rounded{
+   -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+}
+
 .full-div{
   width:940px;
 }

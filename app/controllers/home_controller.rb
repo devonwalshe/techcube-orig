@@ -24,7 +24,11 @@ class HomeController < ApplicationController
   def news
     @contact = Contact.new
     @tumblr_hash = get_tumblr_articles
+    
     @articles = @tumblr_hash["tumblr"]["posts"]["post"] if @tumblr_hash != [] 
+    
+    @articles = modify_photo_posts(@articles)
+    
   end
   
   private
@@ -36,6 +40,19 @@ class HomeController < ApplicationController
     xml = Nokogiri::XML::Document.parse(response.body)
     tumblr_hash = Hash.from_xml(xml.to_s)
     return tumblr_hash
+  end
+  
+  def modify_photo_posts(articles)
+    articles.each do |article|
+      if article["type"] == "photo"
+        photos = []
+        article["photoset"]["photo"].each do |image|
+          photos << {"url" => image["photo_url"][1], "caption" => image["caption"] }
+        end
+
+        article["images"] = photos
+      end
+    end
   end
   
 end
