@@ -7,6 +7,7 @@ class EnquiriesController < ApplicationController
     @enquiry = Enquiry.new(params[:enquiry])
     if @enquiry.save
        EnquiryMailer.enquiry_notification_email(@enquiry).deliver
+       EnquiryMailer.enquiry_thankyou_email(@enquiry).deliver
        flash[:information] = "Thanks for sending us your information! Someone will be in touch shortly"
        # add_user_to_google_group(@google_apps_connection, params[:enquiry][:email], "enquiries")
        redirect_to "/tenants"
