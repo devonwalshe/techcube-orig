@@ -21,6 +21,8 @@ class HomeController < ApplicationController
     @contact = Contact.new
   end
   
+<<<<<<< HEAD
+=======
   def news
     @contact = Contact.new
     @tumblr_hash = get_tumblr_articles
@@ -41,6 +43,7 @@ class HomeController < ApplicationController
     tumblr_hash = Hash.from_xml(xml.to_s)
     return tumblr_hash
   end
+>>>>>>> staging
   
   def modify_photo_posts(articles)
     articles.each do |article|

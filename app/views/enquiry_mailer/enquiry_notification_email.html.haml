@@ -1,27 +1,74 @@
-!!!
-%html
-  %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-  %body
-    New enquiry from
-    =@enquiry.company
-    %br
-    Contact name:  
+%div{:style=>"margin:0 auto;padding:25px; width:650px;background-color:#eee;-webkit-box-shadow: 2px 1px 10px rgba(50, 50, 50, 0.50); -moz-box-shadow:2px 1px 10px rgba(50, 50, 50, 0.50); box-shadow:2px 1px 10px rgba(50, 50, 50, 0.50); -moz-border-radius: 3px; -webkit-border-radius: 10px; -khtml-border-radius: 10px; border-radius: 10px;"}
+  %div{:style => "display:block; padding: 5px; border-bottom:1px solid #bbb; margin:00px 0 20px 0"}
+    %div{:style=>"display:inline-block;"}
+      =image_tag("http://gubbins.s3.amazonaws.com/tc_logo_colour_header.png", :width =>'500')
+    -# %div{:style=>"display:inline-block;border:1px solid #fff;"}
+    -#   %div{:style=>"display:block;;border:1px solid #fff;height:25px"}
+    -#     TechCube 
+    -#   %div{:style=>"display:block;border:1px solid #fff;"}
+    -#     World class startup space in Edinburgh
+  %div{:style=>"display:inline-block; float:left; width:150px; margin:0px 0 20px 0; font-size:1.2em; font-weight:bold;"}
+    %div{:style=>"display:inline-block; font-size:1.2em; font-weight:bold;"}
+      TC Bot Notification
+    =image_tag("http://gubbins.s3.amazonaws.com/tc_bot.png", :width =>'100')
+    
+  
+  %div{:style => "display:inline-block; float:left; width:400px; margin-left:30px;"}
+    %div{:style=>"margin:0px 0 20px 0; font-size:1.2em; font-weight:bold;"}
+      Good news!
+      %br
+      %br
+      
+      New tenancy enquiry from:
+      %br
+      %div{:style=>"font-weight:bold;font-size:1.3em"}
+        =@enquiry.company
+    
+    %div{:style=>"font-weight:bold"}
+      Contact name:  
     = @enquiry.name
     %br
-    Contact email:  
+    %br
+    
+    %div{:style=>"font-weight:bold"}
+      Contact email:  
     = @enquiry.email
     %br
-    Contact phone:  
+    %br
+    
+    %div{:style=>"font-weight:bold"}
+      Contact phone:  
     = @enquiry.phone
     %br
-    employees:  
+    %br
+    
+    %div{:style=>"font-weight:bold"}
+      Employees:  
     = @enquiry.employees
     %br
-    pitch:  
-    = @enquiry.pitch
     %br
-    Move in date:  
-    = @enquiry.movein_date.strftime("%m/%d/%Y")
     
-Thanks - TC bot :)
+    %div{:style=>"font-weight:bold"}
+      Their pitch:  
+      %br 
+    %div{:style=>"font-weight:bold"}
+      "
+      = @enquiry.pitch
+      "
+    %br
+    %div{:style=>"font-weight:bold"}
+      Move in date:  
+    = @enquiry.movein_date.strftime("%m/%d/%Y")
+
+
+    %br
+    %br
+    %br
+  
+  %div{:style=>"margin:20px 0 20px 0; font-size:1em;clear:both"}
+    See you later, punks... TC bot :)
+
+  %div{:style=>"margin:20px 0 20px 0; font-size:1.2em;clear:both"}
+    Please do not reply to this email.
+    
+    
