@@ -1,12 +1,21 @@
 .container
-  .block.top-bottom-twenty-margin
-    .inline-block
-      = image_tag("/assets/logo/tc_logo_colour_header.png", :size => "500x70")
-    -# .inline-block
-    -#   .relative.t1-8em.bold{:style => "bottom:-40px; left:-170px"}
-    -#     World class startup space in Edinburgh
-      -# = image_tag("/assets/temp_logo.png", :size => "300x50")
-
+  .row
+    .span9
+      .block.top-bottom-twenty-margin
+        .inline-block
+          = image_tag("/assets/logo/tc_logo_colour_header.png", :size => "500x70")
+        -# .inline-block
+        -#   .relative.t1-8em.bold{:style => "bottom:-40px; left:-170px"}
+        -#     World class startup space in Edinburgh
+          -# = image_tag("/assets/temp_logo.png", :size => "300x50")
+    .span3
+      .block{:style => "height:85px"}
+        &nbsp;
+      .block
+        %a{:href => "http://www.facebook.com/edtechcube"}
+          =image_tag("/assets/f_logo.png", :size=>"25x25")
+        %a{:href => "http://www.twitter.com/edtechcube"}
+          =image_tag("/assets/t_logo.png", :size=>"40x40")
 
 
 
