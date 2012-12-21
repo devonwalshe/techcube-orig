@@ -27,6 +27,10 @@
                 <br>
                 .top-twenty-margin
                   =image["caption"]
+            -elsif article["type"] == "video"
+              .t1-4em.top-bottom-twenty-margin
+                =article["video_caption"].html_safe
+              =article["video_source"].html_safe
             -else
               =article["regular_body"].html_safe
     .span3

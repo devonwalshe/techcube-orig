@@ -26,7 +26,6 @@ class HomeController < ApplicationController
     @tumblr_hash = get_tumblr_articles
     
     @articles = @tumblr_hash["tumblr"]["posts"]["post"] if @tumblr_hash != [] 
-    
     @articles = modify_photo_posts(@articles)
     
   end
