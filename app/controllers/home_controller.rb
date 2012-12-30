@@ -30,6 +30,10 @@ class HomeController < ApplicationController
     
   end
   
+  def events
+    
+  end
+  
   private
   
   def get_tumblr_articles
@@ -39,6 +43,14 @@ class HomeController < ApplicationController
     xml = Nokogiri::XML::Document.parse(response.body)
     tumblr_hash = Hash.from_xml(xml.to_s)
     return tumblr_hash
+  end
+  
+  
+  def get_otc_events
+    uri = URI.parse("http://opentechcalendar.co.uk/index.php/location/1/json")
+    http = Net::HTTP.new(uri.host, uri.port)
+    response = http.request(Net::HTTP::Get.new(uri.request_uri))
+    
   end
   
   def modify_photo_posts(articles)
