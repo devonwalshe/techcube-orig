@@ -55,6 +55,14 @@
           %li
             %a{:href=>"community"}
               Community
+        -# -if params[:action] == "events"
+        -#   %li.active
+        -#     %a{:href=>"events"}
+        -#       Events
+        -# -else
+        -#   %li
+        -#     %a{:href=>"events"}
+        -#       Events
         -if params[:action] == "mission"
           %li.active
             %a{:href=>"mission"}

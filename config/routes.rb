@@ -9,7 +9,8 @@ Tc::Application.routes.draw do
   match "tenants" => "home#tenants"
   match "community" => "home#community"
   match "mission" => "home#mission"
-  match "news" => "home#news"  
+  match "news" => "home#news" 
+  match "events" => "home#events"  
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

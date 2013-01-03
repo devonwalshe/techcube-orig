@@ -31,7 +31,8 @@ class HomeController < ApplicationController
   end
   
   def events
-    
+    @contact = Contact.new
+    @events = get_otc_events["data"]
   end
   
   private
@@ -50,7 +51,7 @@ class HomeController < ApplicationController
     uri = URI.parse("http://opentechcalendar.co.uk/index.php/location/1/json")
     http = Net::HTTP.new(uri.host, uri.port)
     response = http.request(Net::HTTP::Get.new(uri.request_uri))
-    
+    events = JSON.parse(response.body)
   end
   
   def modify_photo_posts(articles)
