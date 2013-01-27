@@ -1,9 +1,10 @@
 Tc::Application.routes.draw do
-  post "enquiries/create"
+  
 
   get "home/index"
   post "contacts/create"
-  
+  post "events/create"
+  post "enquiries/create"
   
   match "home" => "home#index"
   match "tenants" => "home#tenants"

@@ -1,0 +1,7 @@
+.row
+  .span12
+    .top-bottom-ten-margin
+      - flash.each do |key, value|
+        .bottom-ten-margin
+          %div{:class => "flash #{key}"}
+            = value

@@ -1,19 +1,27 @@
 .bgblue
   .container
+    =render :partial => "layouts/errors"
     .top-twenty-margin
       .row
         .span9
-          .t1em
-            Events
-      
-
-        .span3
           .row
-            .span3
-              - flash.each do |key, value|
-                .bottom-ten-margin
-                  %div{:class => "flash #{key}"}
-                    = value
+            .span9
+              .block.t3em
+                TechCube Events
+              .block.top-bottom-twenty-margin
+                TechCube Events description 
+              .block
+                %a{:href=>"#newEvent", :role=>"button", :class=>"btn btn-large btn-primary block top-bottom-twenty-margin", :"data-toggle"=>"modal", :"data-target"=> "#newEvent"}
+                  Apply for space
+          .row
+            .span9
+              -# -@tc_events.each do |tc_event|
+              -#   =tc_event.event_title
+              -#   %br
+              -#   =tc_event.id
+              -#   %br
+              -#   %br
+        .span3
           .row
             .span3
               =render :partial => "layouts/sidebar"
@@ -25,112 +33,81 @@
       -#     .t2-5em.pull-right{:style=>"opacity:1"}
       -#       Launch Date: 13th December 2012
       -#   =image_tag("/assets/office.jpg")  
-      
-      .row
-        .span9
-          - @date = @events.first["start"]["rfc2882local"]
-          - @events.each do |otc_event|
-            - if otc_event == @events.first
-              .t2em.vdividerbottom
-                = Date.parse(otc_event["start"]["rfc2882local"]).strftime("%A %B %d, %Y")
-              .block.top-ten-margin
-                = otc_event["summary"]
-              .block
-                = "Starts at: \t"+ DateTime.parse(otc_event["start"]["rfc2882local"]).strftime("%l:%M %p")
-              .block
-                = "Ends at: \t"+ DateTime.parse(otc_event["end"]["rfc2882local"]).strftime("%l:%M %p")
+      .block.t3em
+        Open Tech Calendar Events
+      .block.t1em.top-bottom-twenty-margin
+        OTC events website description
+      .block.bottom-twenty-margin
+        %a{:href => "/"}
+          OTC link
+  .row
+    .span9
+      - @date = @otc_events.first["start"]["rfc2882local"]
+      - @otc_events.each do |otc_event|
+        - if otc_event == @otc_events.first
+          .t2em.vdividerbottom
+            = Date.parse(otc_event["start"]["rfc2882local"]).strftime("%A %B %d, %Y")
+          .block.top-ten-margin
+            = otc_event["summary"]
+          .block
+            = "Starts at: \t"+ DateTime.parse(otc_event["start"]["rfc2882local"]).strftime("%l:%M %p")
+          .block
+            = "Ends at: \t"+ DateTime.parse(otc_event["end"]["rfc2882local"]).strftime("%l:%M %p")
 
-              .block.bottom-ten-margin.hdividerbottom
-                -if otc_event["description"] != ""
-                  = "\t" + otc_event["description"]
-                -else
-                  = "\tNo description was entered for this event"
+          .block.bottom-ten-margin.hdividerbottom
+            -if otc_event["description"] != ""
+              = "\t" + otc_event["description"]
+            -else
+              = "\tNo description was entered for this event"
 
-            - elsif otc_event["start"]["rfc2882local"] == @date
-              = "\t" + "event within the same date"
-            - else
-              .t2em.vdividerbottom
-                = Date.parse(otc_event["start"]["rfc2882local"]).strftime("%A %B %d, %Y")
-              .block.top-ten-margin
-                = otc_event["summary"]
-              .block
-                = "Starts at: \t"+ DateTime.parse(otc_event["start"]["rfc2882local"]).strftime("%l:%M %p")
-              .block
-                = "Ends at: \t"+ DateTime.parse(otc_event["end"]["rfc2882local"]).strftime("%l:%M %p")
+        - elsif otc_event["start"]["rfc2882local"] == @date
+          = "\t" + "event within the same date"
+        - else
+          .t2em.vdividerbottom
+            = Date.parse(otc_event["start"]["rfc2882local"]).strftime("%A %B %d, %Y")
+          .block.top-ten-margin
+            = otc_event["summary"]
+          .block
+            = "Starts at: \t"+ DateTime.parse(otc_event["start"]["rfc2882local"]).strftime("%l:%M %p")
+          .block
+            = "Ends at: \t"+ DateTime.parse(otc_event["end"]["rfc2882local"]).strftime("%l:%M %p")
 
-              .block.bottom-ten-margin.hdividerbottom
-                -if otc_event["description"] != ""
-                  = "\t" + otc_event["description"]
-                -else
-                  = "\tNo description was entered for this event"
+          .block.bottom-ten-margin.hdividerbottom
+            -if otc_event["description"] != ""
+              = "\t" + otc_event["description"]
+            -else
+              = "\tNo description was entered for this event"
 
 
 
-            -@date = otc_event["start"]["rfc2882local"]
+        -@date = otc_event["start"]["rfc2882local"]
     .span3
-      .top-twenty-margin
-        .t2em.bottom-twenty-margin
-          Where we are
-        #map_canvas.bottom-twenty-margin{:style => "width:220px; height:220px; border:1px solid #aaa"}
-      :javascript
-        function initialize() {
-          var mapOptions = {
-            center: new google.maps.LatLng(55.939959, -3.182275,326247,672509),
-            zoom: 15,
-            mapTypeId: google.maps.MapTypeId.ROADMAP,
-            disableDefaultUI: true
-          };
+      =render :partial => "layouts/map"
 
-          var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
-          // var contentString = 'get with this';
-
-          var infowindow = new google.maps.InfoWindow({
-              content: 'get with this',
-              maxwidth: 150
-          });
-
-          var cube_image = "http://gubbins.s3.amazonaws.com/tc_logo_box_colour_small.png"
-
-          var marker = new google.maps.Marker({
-             icon: cube_image,
-             position:  new google.maps.LatLng(55.939959, -3.182),
-             map: map,
-             title: "whats up!"
-          });
-
-          var panoramaOptions = {
-
-            position: new google.maps.LatLng(55.9406, -3.1831),
-            pov:{
-              heading:34,
-              pitch:10,
-              zoom:1
-            }
-          };
-
-         // var panorama = new google.maps.StreetViewPanorama(document.getElementById("pano"), panoramaOptions);
-
-          //google.maps.event.addListener(marker, 'click', function() {
-          //  infowindow.open(map,marker);
-          //});
-
-        }
-
-        function loadScript() {
-          var script = document.createElement("script");
-          script.type = "text/javascript";
-          script.src = "http://maps.googleapis.com/maps/api/js?key=AIzaSyDSxwX0QVXxSm2-rHIisLXOSrj5Lw2ZINs&sensor=false&callback=initialize";
-          document.body.appendChild(script);
-        }
-
-        window.onload = loadScript;
-
-      %a{:href => "http://bit.ly/SkKZTh", :target => "blank"}
-
-
-        -# %img{:src => "http://maps.googleapis.com/maps/api/staticmap?center=Edinburgh&zoom=13&size=450x90&markers=color:red|55.95,-3.22&sensor=false&scale=2"}/
-
+.modal{:id=>"newEvent", :class=>"modal hide fade", :tabindex=>"-1", :role=>"dialog", :"aria-labelledby"=>"myModalLabel", :"aria-hidden"=>"true"}
+  .modal-header
+    %h2{:id=>"myModalLabel"}
+      Please fill in your info
+  .modal-body
+    .bottom-twenty-margin.tbold
+      All fields are optional, but we recommend you fill them in
+    .bottom-ten-margin
+    = form_for @event, :url => url_for(:controller => 'events', :action => 'create') do |f|
+      = f.text_field :event_title,  :placeholder => "Event Title"
+      = f.text_field :event_summary, :placeholder => "Event Summary"
+      = f.text_field :organiser_email, :placeholder => "Organiser email"
+      = f.text_field :organiser_name, :placeholder => "Organiser name"
+      = f.text_field :location, :placeholder => "Event location"
+      = f.text_field :postcode, :placeholder => "Post Code"
+      -# = f.text_field :movein_date, :placeholder => "Preferred move in date", :"data-behaviour" => "datepicker"
+      .block.w150.bottom-twenty-margin
+      = f.text_area :event_description, :placeholder => "Please write a description for your event", :style=>"width:450px;height:100px;"
+      %br
+      = f.submit "Send", :class=>"btn btn-success"
   
-  
+  .modal-footer
+    %button{:class=>"btn", :"data-dismiss"=>"modal", :"aria-hidden"=>"true"}
+      Close
+
 
 

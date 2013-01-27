@@ -10,7 +10,7 @@ class HomeController < ApplicationController
   
   def tenants
     @contact = Contact.new
-    @inquiry = Enquiry.new
+    @enquiry = Enquiry.new
   end
   
   def community
@@ -32,7 +32,10 @@ class HomeController < ApplicationController
   
   def events
     @contact = Contact.new
-    @events = get_otc_events["data"]
+    @event = Event.new
+    @tc_events = Event.all
+    @otc_events = get_otc_events["data"]
+    
   end
   
   private
