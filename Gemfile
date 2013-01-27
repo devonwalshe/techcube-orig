@@ -18,6 +18,7 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+  
 end
 
 group :development do
@@ -25,11 +26,11 @@ group :development do
   gem 'ruby-debug19', :require => 'ruby-debug'
 end
 
-
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'provisioning-api'
 gem 'bootstrap-datepicker-rails'
+gem 'bootstrap-datetimepicker-rails'
 gem "mailchimp", "~> 0.0.7.alpha"
 gem 'nokogiri'
 

@@ -12,15 +12,18 @@
                 TechCube Events description 
               .block
                 %a{:href=>"#newEvent", :role=>"button", :class=>"btn btn-large btn-primary block top-bottom-twenty-margin", :"data-toggle"=>"modal", :"data-target"=> "#newEvent"}
-                  Apply for space
+                  Add event
           .row
             .span9
-              -# -@tc_events.each do |tc_event|
-              -#   =tc_event.event_title
-              -#   %br
-              -#   =tc_event.id
-              -#   %br
-              -#   %br
+              -@logged_in = true
+              
+              -if @logged_in == true
+                -@unapproved_events.each do |unapproved_event|
+                  =unapproved_event.organiser_email
+                .vdivider-bottom
+                  unapproved event
+              -@approved_events.each do |tc_event|
+                =tc_event.organiser_email
         .span3
           .row
             .span3
@@ -28,80 +31,95 @@
 .container
   .row
     .span9
-      -# .border.bottom-twenty-margin.relative
-      -#   .absolute{:style=>"bottom:30px; left:0px; opacity:0.8; background-color:#eee; padding:15px; width:445px"}
-      -#     .t2-5em.pull-right{:style=>"opacity:1"}
-      -#       Launch Date: 13th December 2012
-      -#   =image_tag("/assets/office.jpg")  
-      .block.t3em
-        Open Tech Calendar Events
-      .block.t1em.top-bottom-twenty-margin
-        OTC events website description
-      .block.bottom-twenty-margin
-        %a{:href => "/"}
-          OTC link
-  .row
-    .span9
-      - @date = @otc_events.first["start"]["rfc2882local"]
-      - @otc_events.each do |otc_event|
-        - if otc_event == @otc_events.first
-          .t2em.vdividerbottom
-            = Date.parse(otc_event["start"]["rfc2882local"]).strftime("%A %B %d, %Y")
-          .block.top-ten-margin
-            = otc_event["summary"]
-          .block
-            = "Starts at: \t"+ DateTime.parse(otc_event["start"]["rfc2882local"]).strftime("%l:%M %p")
-          .block
-            = "Ends at: \t"+ DateTime.parse(otc_event["end"]["rfc2882local"]).strftime("%l:%M %p")
+      .row
+        .span9
+          -# .border.bottom-twenty-margin.relative
+          -#   .absolute{:style=>"bottom:30px; left:0px; opacity:0.8; background-color:#eee; padding:15px; width:445px"}
+          -#     .t2-5em.pull-right{:style=>"opacity:1"}
+          -#       Launch Date: 13th December 2012
+          -#   =image_tag("/assets/office.jpg")  
+          .block.t3em
+            Open Tech Calendar Events
+          .block.t1em.top-bottom-twenty-margin
+            OTC events website description
+          .block.bottom-twenty-margin
+            %a{:href => "/"}
+              OTC link
+      .row
+        .span9
+          - @date = @otc_events.first["start"]["rfc2882local"]
+          - @otc_events.each do |otc_event|
+            - if otc_event == @otc_events.first
+              .t2em.vdividerbottom
+                = Date.parse(otc_event["start"]["rfc2882local"]).strftime("%A %B %d, %Y")
+              .block.top-ten-margin
+                = otc_event["summary"]
+              .block
+                = "Starts at: \t"+ DateTime.parse(otc_event["start"]["rfc2882local"]).strftime("%l:%M %p")
+              .block
+                = "Ends at: \t"+ DateTime.parse(otc_event["end"]["rfc2882local"]).strftime("%l:%M %p")
 
-          .block.bottom-ten-margin.hdividerbottom
-            -if otc_event["description"] != ""
-              = "\t" + otc_event["description"]
-            -else
-              = "\tNo description was entered for this event"
+              .block.bottom-ten-margin.hdividerbottom
+                -if otc_event["description"] != ""
+                  = "\t" + otc_event["description"]
+                -else
+                  = "\tNo description was entered for this event"
 
-        - elsif otc_event["start"]["rfc2882local"] == @date
-          = "\t" + "event within the same date"
-        - else
-          .t2em.vdividerbottom
-            = Date.parse(otc_event["start"]["rfc2882local"]).strftime("%A %B %d, %Y")
-          .block.top-ten-margin
-            = otc_event["summary"]
-          .block
-            = "Starts at: \t"+ DateTime.parse(otc_event["start"]["rfc2882local"]).strftime("%l:%M %p")
-          .block
-            = "Ends at: \t"+ DateTime.parse(otc_event["end"]["rfc2882local"]).strftime("%l:%M %p")
+            - elsif otc_event["start"]["rfc2882local"] == @date
+              = "\t" + "event within the same date"
+            - else
+              .t2em.vdividerbottom
+                = Date.parse(otc_event["start"]["rfc2882local"]).strftime("%A %B %d, %Y")
+              .block.top-ten-margin
+                = otc_event["summary"]
+              .block
+                = "Starts at: \t"+ DateTime.parse(otc_event["start"]["rfc2882local"]).strftime("%l:%M %p")
+              .block
+                = "Ends at: \t"+ DateTime.parse(otc_event["end"]["rfc2882local"]).strftime("%l:%M %p")
 
-          .block.bottom-ten-margin.hdividerbottom
-            -if otc_event["description"] != ""
-              = "\t" + otc_event["description"]
-            -else
-              = "\tNo description was entered for this event"
+              .block.bottom-ten-margin.hdividerbottom
+                -if otc_event["description"] != ""
+                  = "\t" + otc_event["description"]
+                -else
+                  = "\tNo description was entered for this event"
 
 
 
-        -@date = otc_event["start"]["rfc2882local"]
+            -@date = otc_event["start"]["rfc2882local"]
+
     .span3
       =render :partial => "layouts/map"
-
 .modal{:id=>"newEvent", :class=>"modal hide fade", :tabindex=>"-1", :role=>"dialog", :"aria-labelledby"=>"myModalLabel", :"aria-hidden"=>"true"}
   .modal-header
-    %h2{:id=>"myModalLabel"}
-      Please fill in your info
+    %h3{:id=>"myModalLabel"}
+      New Event
   .modal-body
     .bottom-twenty-margin.tbold
-      All fields are optional, but we recommend you fill them in
+      You can add events to the TechCube website. Once a member of the TechCube team has approved it, it will appear in the listings on the TechCube event page.
+      %br
+      %br
+      Please use the date format: dd/mm/yyyy hh:mm:ss
     .bottom-ten-margin
+
     = form_for @event, :url => url_for(:controller => 'events', :action => 'create') do |f|
       = f.text_field :event_title,  :placeholder => "Event Title"
       = f.text_field :event_summary, :placeholder => "Event Summary"
-      = f.text_field :organiser_email, :placeholder => "Organiser email"
       = f.text_field :organiser_name, :placeholder => "Organiser name"
+      = f.text_field :organiser_email, :placeholder => "Organiser email"
       = f.text_field :location, :placeholder => "Event location"
       = f.text_field :postcode, :placeholder => "Post Code"
-      -# = f.text_field :movein_date, :placeholder => "Preferred move in date", :"data-behaviour" => "datepicker"
+      
+      #datetimepicker1.input-append.date
+        = f.text_field :start_time, :placeholder => "Start Date", :"data-format" => "dd/MM/yyyy hh:mm:ss"
+        %span.add-on
+          %i{"data-date-icon" => "icon-calendar", "data-time-icon" => "icon-time"}
+      #datetimepicker2.input-append.date
+        = f.text_field :end_time, :placeholder => "End Date", :"data-format" => "dd/MM/yyyy hh:mm:ss"
+        %span.add-on
+          %i{"data-date-icon" => "icon-calendar", "data-time-icon" => "icon-time"}
       .block.w150.bottom-twenty-margin
       = f.text_area :event_description, :placeholder => "Please write a description for your event", :style=>"width:450px;height:100px;"
+      = f.hidden_field :approved, :value => "false"
       %br
       = f.submit "Send", :class=>"btn btn-success"
   
@@ -109,5 +127,14 @@
     %button{:class=>"btn", :"data-dismiss"=>"modal", :"aria-hidden"=>"true"}
       Close
 
-
-
+:javascript
+  $(function() {
+    $('#datetimepicker1').datetimepicker({
+      language: 'en'
+    });
+  });
+  $(function() {
+    $('#datetimepicker2').datetimepicker({
+      language: 'en'
+    });
+  });

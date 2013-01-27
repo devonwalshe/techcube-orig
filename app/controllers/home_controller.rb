@@ -33,8 +33,15 @@ class HomeController < ApplicationController
   def events
     @contact = Contact.new
     @event = Event.new
-    @tc_events = Event.all
+    @unapproved_events = Event.where(:approved => false)
+    @approved_events = Event.where(:approved => true)
     @otc_events = get_otc_events["data"]
+    
+  end
+  
+  def jobs
+    @contact = Contact.new
+    @event = Event.new
     
   end
   

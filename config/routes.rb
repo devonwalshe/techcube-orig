@@ -5,6 +5,7 @@ Tc::Application.routes.draw do
   post "contacts/create"
   post "events/create"
   post "enquiries/create"
+  post "jobs/create"
   
   match "home" => "home#index"
   match "tenants" => "home#tenants"
@@ -12,7 +13,7 @@ Tc::Application.routes.draw do
   match "mission" => "home#mission"
   match "news" => "home#news" 
   match "events" => "home#events"  
-  
+  match "jobs" => "home#jobs"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

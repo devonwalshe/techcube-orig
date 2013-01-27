@@ -27,7 +27,7 @@ class Event < ActiveRecord::Base
                    :length => { :maximum => 80, :message => "is too long"}
   
   validates :organiser_email, :presence => { :message => "can't be blank"},
-                     :format => { :with => email_regex, :message => "is the incorrect format"},
-                     :uniqueness => {:case_sensitive => false, :message => "has already signed up"}
+                     :format => { :with => email_regex, :message => "is the incorrect format"}
+                    
 
 end
