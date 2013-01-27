@@ -1,0 +1,56 @@
+.bgblue
+  .container
+    =render :partial => "layouts/errors"
+    .top-twenty-margin
+      .row
+        .span9
+          Job listings
+        .span3
+          .row
+            .span3
+              =render :partial => "layouts/sidebar"
+.container
+  .row
+    .span9
+      Jobs listings
+
+    .span3
+      =render :partial => "layouts/map"
+-# .modal{:id=>"newEvent", :class=>"modal hide fade", :tabindex=>"-1", :role=>"dialog", :"aria-labelledby"=>"myModalLabel", :"aria-hidden"=>"true"}
+-#   .modal-header
+-#     %h3{:id=>"myModalLabel"}
+-#       New Event
+-#   .modal-body
+-#     .bottom-twenty-margin.tbold
+-#       You can add events to the TechCube website. Once a member of the TechCube team has approved it, it will appear in the listings on the TechCube event page.
+-#       %br
+-#       %br
+-#       Please use the date format: dd/mm/yyyy hh:mm:ss
+-#     .bottom-ten-margin
+-# 
+-#     = form_for @event, :url => url_for(:controller => 'events', :action => 'create') do |f|
+-#       = f.text_field :event_title,  :placeholder => "Event Title"
+-#       = f.text_field :event_summary, :placeholder => "Event Summary"
+-#       = f.text_field :organiser_name, :placeholder => "Organiser name"
+-#       = f.text_field :organiser_email, :placeholder => "Organiser email"
+-#       = f.text_field :location, :placeholder => "Event location"
+-#       = f.text_field :postcode, :placeholder => "Post Code"
+-#       
+-#       #datetimepicker1.input-append.date
+-#         = f.text_field :start_time, :placeholder => "Start Date", :"data-format" => "dd/MM/yyyy hh:mm:ss"
+-#         %span.add-on
+-#           %i{"data-date-icon" => "icon-calendar", "data-time-icon" => "icon-time"}
+-#       #datetimepicker2.input-append.date
+-#         = f.text_field :end_time, :placeholder => "End Date", :"data-format" => "dd/MM/yyyy hh:mm:ss"
+-#         %span.add-on
+-#           %i{"data-date-icon" => "icon-calendar", "data-time-icon" => "icon-time"}
+-#       .block.w150.bottom-twenty-margin
+-#       = f.text_area :event_description, :placeholder => "Please write a description for your event", :style=>"width:450px;height:100px;"
+-#       = f.hidden_field :approved, :value => "false"
+-#       %br
+-#       = f.submit "Send", :class=>"btn btn-success"
+-#   
+-#   .modal-footer
+-#     %button{:class=>"btn", :"data-dismiss"=>"modal", :"aria-hidden"=>"true"}
+-#       Close
+
