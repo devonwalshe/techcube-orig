@@ -41,8 +41,7 @@ class HomeController < ApplicationController
   
   def jobs
     @contact = Contact.new
-    @event = Event.new
-    
+    @job = Job.new
   end
   
   private

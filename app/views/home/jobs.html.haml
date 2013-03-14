@@ -5,6 +5,9 @@
       .row
         .span9
           Job listings
+          .block
+            %a{:href=>"#newJobListing", :role=>"button", :class=>"btn btn-large btn-primary block top-bottom-twenty-margin", :"data-toggle"=>"modal", :"data-target"=> "#newJobListing"}
+              Add Job Listing
         .span3
           .row
             .span3
@@ -16,41 +19,39 @@
 
     .span3
       =render :partial => "layouts/map"
--# .modal{:id=>"newEvent", :class=>"modal hide fade", :tabindex=>"-1", :role=>"dialog", :"aria-labelledby"=>"myModalLabel", :"aria-hidden"=>"true"}
--#   .modal-header
--#     %h3{:id=>"myModalLabel"}
--#       New Event
--#   .modal-body
--#     .bottom-twenty-margin.tbold
--#       You can add events to the TechCube website. Once a member of the TechCube team has approved it, it will appear in the listings on the TechCube event page.
--#       %br
--#       %br
--#       Please use the date format: dd/mm/yyyy hh:mm:ss
--#     .bottom-ten-margin
--# 
--#     = form_for @event, :url => url_for(:controller => 'events', :action => 'create') do |f|
--#       = f.text_field :event_title,  :placeholder => "Event Title"
--#       = f.text_field :event_summary, :placeholder => "Event Summary"
--#       = f.text_field :organiser_name, :placeholder => "Organiser name"
--#       = f.text_field :organiser_email, :placeholder => "Organiser email"
--#       = f.text_field :location, :placeholder => "Event location"
--#       = f.text_field :postcode, :placeholder => "Post Code"
--#       
--#       #datetimepicker1.input-append.date
--#         = f.text_field :start_time, :placeholder => "Start Date", :"data-format" => "dd/MM/yyyy hh:mm:ss"
--#         %span.add-on
--#           %i{"data-date-icon" => "icon-calendar", "data-time-icon" => "icon-time"}
--#       #datetimepicker2.input-append.date
--#         = f.text_field :end_time, :placeholder => "End Date", :"data-format" => "dd/MM/yyyy hh:mm:ss"
--#         %span.add-on
--#           %i{"data-date-icon" => "icon-calendar", "data-time-icon" => "icon-time"}
--#       .block.w150.bottom-twenty-margin
--#       = f.text_area :event_description, :placeholder => "Please write a description for your event", :style=>"width:450px;height:100px;"
--#       = f.hidden_field :approved, :value => "false"
--#       %br
--#       = f.submit "Send", :class=>"btn btn-success"
--#   
--#   .modal-footer
--#     %button{:class=>"btn", :"data-dismiss"=>"modal", :"aria-hidden"=>"true"}
--#       Close
+.modal{:id=>"newJobListing", :class=>"modal hide fade", :tabindex=>"-1", :role=>"dialog", :"aria-labelledby"=>"myModalLabel", :"aria-hidden"=>"true"}
+  .modal-header
+    %h3{:id=>"myModalLabel"}
+      New Job Listing
+  .modal-body
+    .bottom-twenty-margin.tbold
+      We are using the Guardian format for job listings - here are some guidelines for best practice:
+      %a{:href => "http://bit.ly/YxQKFb", :target => "_blank" }
+        http://bit.ly/YxQKFb
+    .bottom-ten-margin
+
+    = form_for @job, :url => url_for(:controller => 'jobs', :action => 'create') do |f|
+      = f.text_field :user_name,  :placeholder => "Your Name"
+      = f.text_field :user_email, :placeholder => "Your Email"
+      = f.text_field :company_name, :placeholder => "Company Name"
+      = f.text_field :company_description, :placeholder => "Company Description"
+      = f.text_field :job_title, :placeholder => "Job Title"
+      = f.text_field :job_description, :placeholder => "Job Description"
+      = f.text_field :person_description, :placeholder => "Person Description"
+      = f.text_field :salary, :placeholder => "Salary"
+      = f.text_field :location, :placeholder => "Location"
+      = f.text_field :postcode, :placeholder => "Post Code"
+      = f.text_field :start_date, :placeholder => "Start Date", :"data-behaviour" => "datepicker"
+      = f.text_field :how_to, :placeholder => "How to Apply"
+
+
+      .block.w150.bottom-twenty-margin
+
+      = f.hidden_field :approved, :value => "false"
+      %br
+      = f.submit "Send", :class=>"btn btn-success"
+  
+  .modal-footer
+    %button{:class=>"btn", :"data-dismiss"=>"modal", :"aria-hidden"=>"true"}
+      Close
 
