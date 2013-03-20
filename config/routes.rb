@@ -14,6 +14,9 @@ Tc::Application.routes.draw do
   match "news" => "home#news" 
   match "events" => "home#events"  
   match "jobs" => "home#jobs"
+  match "surf" => "home#surf"
+  
+  match '/' => 'home#surf', :constraints => { :subdomain => "surf"}
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
