@@ -55,22 +55,22 @@
           %li
             %a{:href=>"community"}
               Community
-        -if params[:action] == "events"
-          %li.active
-            %a{:href=>"events"}
-              Events
-        -else
-          %li
-            %a{:href=>"events"}
-              Events
-        -if params[:action] == "jobs"
-          %li.active
-            %a{:href=>"jobs"}
-              Jobs
-        -else
-          %li
-            %a{:href=>"jobs"}
-              Jobs
+        -# -if params[:action] == "events"
+        -#   %li.active
+        -#     %a{:href=>"events"}
+        -#       Events
+        -# -else
+        -#   %li
+        -#     %a{:href=>"events"}
+        -#       Events
+        -# -if params[:action] == "jobs"
+        -#   %li.active
+        -#     %a{:href=>"jobs"}
+        -#       Jobs
+        -# -else
+        -#   %li
+        -#     %a{:href=>"jobs"}
+        -#       Jobs
         -if params[:action] == "mission"
           %li.active
             %a{:href=>"mission"}
