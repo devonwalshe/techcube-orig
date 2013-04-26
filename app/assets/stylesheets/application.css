@@ -2,4 +2,30 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-*= require bootstrap-datepicker
+*= require bootstrap-datepicker 
+
+.tumblr_posts {
+  
+} 
+
+.tumblr_post {
+  
+} 
+
+.tumblr_title {
+  
+} 
+
+.tumblr_body img {
+  
+} 
+
+.read_more_container{
+  
+  
+} 
+
+.read_more_container {
+  
+  
+}

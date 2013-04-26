@@ -23,11 +23,18 @@ class HomeController < ApplicationController
   
   def news
     @contact = Contact.new
-    @tumblr_hash = get_tumblr_articles
+    @tumblr_hash = get_tumblr_articles("http://blog.techcu.be/api/read?start=0&num=5")
     
     @articles = @tumblr_hash["tumblr"]["posts"]["post"] if @tumblr_hash != [] 
     @articles = modify_photo_posts(@articles)
     
+  end
+  
+  def surf
+    @tumblr_hash = get_tumblr_articles("http://techcubesurfclub.tumblr.com/api/read?start=0&num=5")
+    @articles = @tumblr_hash["tumblr"]["posts"]["post"] if @tumblr_hash != []
+    # debugger
+    @articles = modify_photo_posts(@articles)
   end
   
   def events
@@ -46,8 +53,8 @@ class HomeController < ApplicationController
   
   private
   
-  def get_tumblr_articles
-    uri = URI.parse("http://blog.techcu.be/api/read?start=0&num=5")
+  def get_tumblr_articles(url)
+    uri = URI.parse(url)
     http = Net::HTTP.new(uri.host, uri.port)
     response = http.request(Net::HTTP::Get.new(uri.request_uri))
     xml = Nokogiri::XML::Document.parse(response.body)
@@ -67,10 +74,13 @@ class HomeController < ApplicationController
     articles.each do |article|
       if article["type"] == "photo"
         photos = []
-        article["photoset"]["photo"].each do |image|
-          photos << {"url" => image["photo_url"][1], "caption" => image["caption"] }
+        if article["photoset"] != nil
+          article["photoset"]["photo"].each do |image|
+            photos << {"url" => image["photo_url"][1], "caption" => image["caption"] }
+          end  
+        else
+          photos << { "url" => article["photo_url"][1], "caption" => article["caption"]}
         end
-
         article["images"] = photos
       end
     end
