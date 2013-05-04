@@ -1,6 +1,8 @@
 Tc::Application.routes.draw do
   
-
+  resources :sessions, :only => [:new, :create, :destroy]
+  resources :pages
+  resources :job
   get "home/index"
   post "contacts/create"
   post "events/create"
@@ -17,6 +19,15 @@ Tc::Application.routes.draw do
   match "surf" => "home#surf"
   
   match '/' => 'home#surf', :constraints => { :subdomain => "surf"}
+  
+  
+  
+  match "/signin", :to => "sessions#new"
+  match "/signout", :to => "sessions#destroy"
+  match "/admin", :to => "admin#index"
+  match "/admin/pages/:action/" => "pages#:action" 
+  match "/admin/pages/:action/:id" => "pages#:action"
+  match ':id' => 'pages#show'     
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

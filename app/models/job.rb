@@ -31,4 +31,12 @@ class Job < ActiveRecord::Base
   validates :user_email, :presence => { :message => "can't be blank"},
                      :format => { :with => email_regex, :message => "is the incorrect format"}
 
+  private
+  
+  
+  def live_jobs
+      Job.where("today >= live_date AND today <= expiry_date")
+  end
+  
+
 end

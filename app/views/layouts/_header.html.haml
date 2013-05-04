@@ -9,7 +9,19 @@
         -#     World class startup space in Edinburgh
           -# = image_tag("/assets/temp_logo.png", :size => "300x50")
     .span3
-      .block{:style => "height:85px"}
+      .block
+        -if signed_in?
+          .bold.block 
+            = current_user.name
+            || 
+            %a{:href => "/signout"}
+              signout      
+          %a{:href => "/admin"}
+            Admin Page
+        -else
+          %a{:href => "/signin"}
+            login
+      .block{:style => "height:45px"}
         &nbsp;
       .block
         %a{:href => "http://www.facebook.com/edtechcube"}
@@ -78,4 +90,6 @@
         -else
           %li
             %a{:href=>"mission"}
-              Mission
+              Mission 
+.container
+  =render :partial => "/layouts/errors"

@@ -2,12 +2,19 @@ class ApplicationController < ActionController::Base
   
   protect_from_forgery
   # before_filter :check_uri
+  include SessionsHelper
+  include ApplicationHelper
   
-  
-  
+  def page_not_found
+    render "home/page_not_found", :status=>404
+  end
   
   private
-
+    
+    def authenticate
+       deny_access unless signed_in?
+    end
+    
     def check_uri
       redirect_to request.protocol + "www." + request.host_with_port + request.request_uri if !/^www/.match(request.host)
     end

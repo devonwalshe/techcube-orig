@@ -1,0 +1,15 @@
+
+.container
+  .row
+    .span12
+      %h1.top-twenty-margin 
+        Sign in   
+      .top-twenty-margin
+        = form_for :session, :url => sessions_path do |f|
+          = f.label :email
+          = f.text_field :email
+          = f.label :password
+          = f.password_field :password
+          .block
+            = f.submit "Sign in", :class => "btn btn-large top-twenty-margin btn-success"   
+		

@@ -1,0 +1,60 @@
+.container
+  .row
+    .span12
+      %h2
+        Admin area
+  
+  .row
+    .span12
+      .inline.tbold{:style => "font-size:2em;"}
+        Pages   
+      %a{:href => "admin/pages/new"}
+        {+ new page}
+  .row
+    .span12
+      .row
+        .span4
+          Title
+        .span6
+          URL
+        .span2
+          Tools
+      -@pages.each do |page|
+        .row
+          .span4
+            =page.title
+          .span6
+            =page.url
+          .span2
+            %a{:href => "#{page.url}"}
+              View Page
+            || 
+            %a{:href => "admin/pages/edit/#{page.id}"}
+              Edit
+            ||
+            %a{:href => "admin/pages/destroy/#{page.id}", :confirm => "This will permanently delete the page, are you sure?"}
+              Delete
+          
+  .row
+    .span12
+      %h4
+        Users
+  .row
+    .span12
+      list of users
+      
+  .row
+    .span12
+      %h4
+        Jobs
+  .row
+    .span12
+      list of Jobs
+
+  .row
+    .span12
+      %h4
+        Events
+  .row
+    .span12
+      Events
