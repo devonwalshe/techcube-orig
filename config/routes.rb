@@ -27,7 +27,7 @@ Tc::Application.routes.draw do
   match "/admin", :to => "admin#index"
   match "/admin/pages/:action/" => "pages#:action" 
   match "/admin/pages/:action/:id" => "pages#:action"
-  match ':id' => 'pages#show'     
+  match '/:url' => 'pages#show'     
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -13,12 +13,13 @@
   .row
     .span12
       .row
-        .span4
-          Title
-        .span6
-          URL
-        .span2
-          Tools
+        .tbold
+          .span4
+            Title
+          .span6
+            URL
+          .span2
+            Tools    
       -@pages.each do |page|
         .row
           .span4
@@ -37,12 +38,31 @@
           
   .row
     .span12
-      %h4
-        Users
-  .row
-    .span12
-      list of users
-      
+      .inline.tbold{:style => "font-size:2em;"}
+        Users   
+      %a{:href => "admin/users/new"}
+        {+ new user}  
+      .row
+        .tbold
+          .span4
+            name
+          .span4
+            email
+          .span2
+            admin?
+          .span2
+            tools
+      -@users.each do |user|
+        .row
+          .span4
+            =user.name
+          .span4
+            =user.email
+          .span2
+            =user.admin?
+          .span2
+            %a{:href => "admin/user/destroy/#{user.id}", :confirm => "This will permanently delete the user, are you sure?"}
+              Delete   
   .row
     .span12
       %h4

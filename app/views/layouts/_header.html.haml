@@ -34,39 +34,49 @@
 .container
   .navbar{:style=>"margin-bottom:0px"}
     .navbar-inner
-      %ul.nav
-        -if params[:action] == "index"
-          %li.active
-            %a{:href=>"home"}
-              Home
-        -else
-          %li
-            %a{:href=>"home"}
-              Home
-        -if params[:action] == "news"
-          %li.active
-            %a{:href=>"news"}
-              News
-        -else
-          %li
-            %a{:href=>"news"}
-              News
-        -if params[:action] == "tenants"
-          %li.active
-            %a{:href=>"tenants"}
-              Tenants
-        -else
-          %li
-            %a{:href=>"tenants"}
-              Tenants
-        -if params[:action] == "community"
-          %li.active
-            %a{:href=>"community"}
-              Community
-        -else
-          %li
-            %a{:href=>"community"}
-              Community
+      -Page.all.each do |page|
+        %ul.nav
+          -if params[:id] == page.url
+            %li.active
+              %a{:href=>"/#{page.url}"}
+                =page.title
+          -else
+            %li
+              %a{:href=>"/#{page.url}"}
+                =page.title
+      -# %ul.nav
+      -#         -if params[:action] == "index"
+      -#           %li.active
+      -#             %a{:href=>"home"}
+      -#               Home
+      -#         -else
+      -#           %li
+      -#             %a{:href=>"home"}
+      -#               Home
+      -#         -if params[:action] == "news"
+      -#           %li.active
+      -#             %a{:href=>"news"}
+      -#               News
+      -#         -else
+      -#           %li
+      -#             %a{:href=>"news"}
+      -#               News
+      -#         -if params[:action] == "tenants"
+      -#           %li.active
+      -#             %a{:href=>"tenants"}
+      -#               Tenants
+      -#         -else
+      -#           %li
+      -#             %a{:href=>"tenants"}
+      -#               Tenants
+      -#         -if params[:action] == "community"
+      -#           %li.active
+      -#             %a{:href=>"community"}
+      -#               Community
+      -#         -else
+      -#           %li
+      -#             %a{:href=>"community"}
+      -#               Community  
         -# -if params[:action] == "events"
         -#   %li.active
         -#     %a{:href=>"events"}
@@ -83,13 +93,13 @@
         -#   %li
         -#     %a{:href=>"jobs"}
         -#       Jobs
-        -if params[:action] == "mission"
-          %li.active
-            %a{:href=>"mission"}
-              Mission
-        -else
-          %li
-            %a{:href=>"mission"}
-              Mission 
+        -# -if params[:action] == "mission"
+        -#   %li.active
+        -#     %a{:href=>"mission"}
+        -#       Mission
+        -# -else
+        -#   %li
+        -#     %a{:href=>"mission"}
+        -#       Mission   
 .container
   =render :partial => "/layouts/errors"

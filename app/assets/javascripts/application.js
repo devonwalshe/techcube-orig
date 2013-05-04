@@ -21,7 +21,8 @@
 
 tinymce.init({
     selector: "textarea",
-
+    plugins: "fullscreen wordcount media image preview code",
+    toolbar: "bold italic underline strikethrough subscript superscript outdent indent selectall removeformat blockquote numlist bullist alignleft aligncenter alignright alignjustify undo redo fullscreen media image code preview"
  });
 
 $(document).on("focus", "[data-behaviour~='datepicker']", function(e){

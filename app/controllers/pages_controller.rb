@@ -27,8 +27,18 @@ def edit
   render "/admin/pages/edit"
 end
 
+def update
+  @page = Page.find(params[:id])
+  if @page.update_attributes(params[:page])
+    flash[:success] = "Page updated."
+    redirect_to "/admin"
+  else
+    render '/admin'
+  end
+end
+
 def show
-  @page = Page.where('url = ?', params[:id]).first
+  @page = Page.where('url = ?', params[:url]).first
   
   unless @page
     page_not_found

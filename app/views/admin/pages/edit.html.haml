@@ -1,1 +1,18 @@
-Edit Page Form
+.container
+  .row
+    .span12
+      %h1
+        Edit Page
+  .row
+    .span12
+    
+      = form_for @page do |f|
+        = f.label :title
+        = f.text_field :title, :value => "#{@page.title}"
+        = f.label :url
+        = f.text_field :url, :value => "#{@page.url}"
+        = f.label :content
+        = f.text_area :body, :class => "tinymce", :rows => 10, :cols => 120, :value => "#{@page.body}"
+        
+        .block
+          = f.submit "save page", :class => "btn btn-large top-twenty-margin btn-success pull-left"
