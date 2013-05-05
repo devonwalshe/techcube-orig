@@ -7,6 +7,37 @@
   .row
     .span12
       .inline.tbold{:style => "font-size:2em;"}
+        News Posts   
+      %a{:href => "admin/posts/new"}
+        {+ new post}
+  .row
+    .span12
+      .row
+        .tbold
+          .span4
+            Title
+          .span6
+            Author
+          .span2
+            Tools    
+      -@posts.each do |post|
+        .row
+          .span4
+            =post.title
+          .span6
+            =post.user.name if post.user
+          .span2
+            %a{:href => "news/#{post.to_url}"}
+              View Post
+            || 
+            %a{:href => "admin/posts/edit/#{post.id}"}
+              Edit
+            ||
+            =link_to 'Delete', post, :method => :delete, :confirm => "This will permanently delete the post, are you sure?"
+
+  .row
+    .span12
+      .inline.tbold{:style => "font-size:2em;"}
         Pages   
       %a{:href => "admin/pages/new"}
         {+ new page}

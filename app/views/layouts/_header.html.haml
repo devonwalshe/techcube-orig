@@ -34,6 +34,16 @@
 .container
   .navbar{:style=>"margin-bottom:0px"}
     .navbar-inner
+      %ul.nav
+        -if params[:page] == "News"
+          %li.active
+            %a{:href=>"/news"}
+              New
+        -else
+          %li
+            %a{:href=>"/news"}
+              News
+      
       -Page.all.each do |page|
         %ul.nav
           -if params[:id] == page.url

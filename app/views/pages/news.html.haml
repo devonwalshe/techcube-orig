@@ -1,0 +1,10 @@
+.container
+  .row
+    .span12
+      TechCube news Page
+  .row
+    .span12
+      -@posts.each do |post|
+        %h2
+          %a{:href => "/news/#{post.to_url}"}
+            =post.title

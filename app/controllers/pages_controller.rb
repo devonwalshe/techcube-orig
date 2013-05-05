@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
 
+before_filter :authenticate, :only => [:new, :edit, :update, :destroy]
+
 def new
   @page = Page.new
   render "admin/pages/new"
@@ -35,6 +37,11 @@ def update
   else
     render '/admin'
   end
+end
+
+def news
+  @posts = Post.all
+  render "/pages/news"
 end
 
 def show

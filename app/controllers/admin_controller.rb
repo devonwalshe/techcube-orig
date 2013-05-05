@@ -6,6 +6,7 @@ class AdminController < ApplicationController
    @events = Event.all
    @users = User.all
    @pages = Page.all
+   @posts = Post.all
   end
   
   

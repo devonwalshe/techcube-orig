@@ -1,0 +1,17 @@
+.container
+  .row
+    =params
+    .span12
+      
+      New post Form
+  .row
+    .span12
+    
+      = form_for @post do |f|
+        = f.label :title
+        = f.text_field :title
+        = f.hidden_field :user_id, :value => current_user.id if signed_in?
+        = f.label :content
+        = f.text_area :body, :class => "tinymce", :rows => 10, :cols => 120
+        .block
+          = f.submit "create post", :class => "btn btn-large top-twenty-margin btn-success pull-left"

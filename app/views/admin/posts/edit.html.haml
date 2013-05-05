@@ -1,0 +1,18 @@
+.container
+  .row
+    .span12
+      =params
+      %h1
+        
+        Edit post
+  .row
+    .span12
+    
+      = form_for @post do |f|
+        = f.label :title
+        = f.text_field :title, :value => "#{@post.title}"
+        = f.label :content
+        = f.text_area :body, :class => "tinymce", :rows => 10, :cols => 120, :value => "#{@post.body}"
+        
+        .block
+          = f.submit "save post", :class => "btn btn-large top-twenty-margin btn-success pull-left"
