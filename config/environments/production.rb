@@ -13,6 +13,9 @@ Tc::Application.configure do
 
   # Compress JavaScripts and CSS
   config.assets.compress = true
+  
+  #tinymce precompile
+  config.assets.precompile += %w[tinymce/tiny_mce.min.js tinymce/langs/en.js tinymce/themes/modern/theme.min.js]
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = true

@@ -34,7 +34,6 @@ gem 'bootstrap-datepicker-rails'
 gem 'bootstrap-datetimepicker-rails'
 gem "mailchimp", "~> 0.0.7.alpha"
 gem 'nokogiri'
-gem 'tinymce-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
