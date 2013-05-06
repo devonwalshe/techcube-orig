@@ -31,7 +31,7 @@ class JobsController < ApplicationController
 
   def edit
     @job = Job.find(params[:id])
-    render "/admin/Jobs/edit"
+    render "/admin/jobs/edit"
   end
 
   def update
