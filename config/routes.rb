@@ -4,6 +4,7 @@ Tc::Application.routes.draw do
   resources :pages
   resources :jobs
   resources :posts
+  resources :users
   get "home/index"
   post "contacts/create"
   post "events/create"
@@ -26,12 +27,11 @@ Tc::Application.routes.draw do
   match "/signin", :to => "sessions#new"
   match "/signout", :to => "sessions#destroy"
   match "/admin", :to => "admin#index"
-  match "/admin/pages/:action/" => "pages#:action" 
-  match "/admin/pages/:action/:id" => "pages#:action"
-  match "/admin/posts/:action/" => "posts#:action" 
-  match "/admin/posts/:action/:id" => "posts#:action"
+  match "/admin/:controller/:action/" => "pages#:action" 
+  match "/admin/:controller/:action/:id" => "pages#:action"
   match "/news" => "pages#news"
   match "/news/:post" => "posts#show"
+  match "/jobs/:post" => "jobs#show"
   match '/:url' => 'pages#show'     
   # The priority is based upon order of creation:
   # first created -> highest priority.

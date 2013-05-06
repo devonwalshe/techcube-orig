@@ -9,6 +9,11 @@ class ApplicationController < ActionController::Base
     render "home/page_not_found", :status=>404
   end
   
+  def live_jobs
+      Job.where("today >= live_date AND today <= expiry_date")
+  end
+  
+  
   private
     
     def authenticate

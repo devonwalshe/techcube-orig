@@ -6,7 +6,7 @@
   
   .row
     .span12
-      .inline.tbold{:style => "font-size:2em;"}
+      .inline-block.tbold.top-twenty-margin{:style => "font-size:2em;"}
         News Posts   
       %a{:href => "admin/posts/new"}
         {+ new post}
@@ -37,7 +37,7 @@
 
   .row
     .span12
-      .inline.tbold{:style => "font-size:2em;"}
+      .inline-block.tbold.top-twenty-margin{:style => "font-size:2em;"}
         Pages   
       %a{:href => "admin/pages/new"}
         {+ new page}
@@ -69,7 +69,7 @@
           
   .row
     .span12
-      .inline.tbold{:style => "font-size:2em;"}
+      .inline-block.tbold.top-twenty-margin{:style => "font-size:2em;"}
         Users   
       %a{:href => "admin/users/new"}
         {+ new user}  
@@ -92,15 +92,63 @@
           .span2
             =user.admin?
           .span2
-            %a{:href => "admin/user/destroy/#{user.id}", :confirm => "This will permanently delete the user, are you sure?"}
-              Delete   
+             
+            %a{:href => "admin/users/edit/#{user.id}"}
+              Edit
+            ||   
+            %a{:href => "admin/users/destroy/#{user.id}", :confirm => "This will permanently delete the user, are you sure?"}
+              Delete
+                 
   .row
     .span12
-      %h4
-        Jobs
+      .inline-block.tbold.top-twenty-margin{:style => "font-size:2em;"}
+        Jobs   
+      %a{:href => "admin/jobs/new"}
+        {+ new job}
   .row
-    .span12
-      list of Jobs
+    .tbold
+      .span1
+        Company
+      .span1
+        Job Title
+      .span1
+        Location
+      .span1
+        Salary
+      .span2
+        Start Date
+      .span2
+        Goes Live
+      .span2
+        Expires
+      .span2
+        Tools 
+  
+  -@jobs.each do |job|
+    .row
+      .span1
+        =job.company_name
+      .span1
+        =job.job_title
+      .span1
+        =job.location
+      .span1
+        =job.salary
+      .span2
+        =job.start_date.strftime("%A %B %d, %Y")
+      .span2
+        =job.live_date.strftime("%A %B %d, %Y")
+      .span2
+        =job.expiry_date.strftime("%A %B %d, %Y")
+      .span2
+        %a{:href => "/jobs/#{job.to_url}"}
+          View Page
+        || 
+        %a{:href => "admin/jobs/edit/#{job.id}"}
+          Edit
+        ||
+        %a{:href => "admin/jobs/destroy/#{job.id}", :confirm => "This will permanently delete the page, are you sure?"}
+          Delete 
 
   .row
     .span12

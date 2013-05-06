@@ -1,0 +1,19 @@
+.container
+  .row
+    .span12
+      %h1 
+        New User
+
+      = form_for @user do |f|
+        = f.label :name
+        = f.text_field :name
+        = f.label :email
+        = f.text_field :email
+        = f.label :password
+        = f.password_field :password
+        = f.label :admin
+        = f.check_box :admin
+        = f.label :password_confirmation
+        = f.password_field :password_confirmation
+        .block
+          = f.submit "Sign up", :class => "btn btn-large top-twenty-margin btn-success"  

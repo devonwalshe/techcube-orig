@@ -1,1 +1,48 @@
-New Job form
+.container
+  .row
+    .span12
+      %h2
+        New Job
+        
+  .row
+    .span12
+      '### include Some advice from guardian jobs site:  ###       
+      %a.block{:href => "http://jobs.guardian.co.uk/article/4277804/how-to-write-good-job-advertisements/"}
+        http://jobs.guardian.co.uk/article/4277804/how-to-write-good-job-advertisements/
+  .row
+    .span12
+      = form_for @job do |f|
+        = f.label :approved
+        = f.check_box :approved
+        = f.label :company_description
+        = f.text_field :company_description
+        = f.label :company_name
+        = f.text_field :company_name
+        = f.label "How to apply"
+        = f.text_area :how_to
+        = f.label :job_description
+        = f.text_area :job_description
+        = f.label :job_title
+        = f.text_field :job_title
+        = f.label "when does it start?"
+        = f.text_field :start_date, :"data-behaviour" => "datepicker"
+        = f.label "when would you like this ad to go live?"
+        = f.text_field :live_date, :"data-behaviour" => "datepicker"
+        = f.label "when would you like this ad to expire?"
+        = f.text_field :expiry_date, :"data-behaviour" => "datepicker"
+        = f.label "What Town / City?"
+        = f.text_field :location
+        = f.label :postcode
+        = f.text_field :postcode
+        = f.label "Describe the ideal candidate"
+        = f.text_area :person_description
+        = f.label :salary
+        = f.select :salary, ["Under £10,000", "£15,000-£20,000", "£20,000-£30,000", "£30,000-£40,000", "£40,000-£50,000", "£50,000-£60,000", "£60,000-£80,000", "£80,000-£100,000", "£100,000 +"]
+        = f.label "Hours per week"
+        = f.select :hours_per_week, ["Full Time", "Part Time", "0-10", "10-15", "15-20", "20-25", "25-30", "30-35"]
+        = f.label "Your email"
+        = f.text_field :user_email
+        = f.label "Your name"
+        = f.text_field :user_name
+        .block
+          = f.submit "Create Job", :class => "btn btn-large top-twenty-margin btn-success pull-left"
