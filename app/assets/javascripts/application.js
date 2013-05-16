@@ -17,15 +17,14 @@
 //= require bootstrap
 //= require bootstrap-datepicker
 //= require bootstrap-datetimepicker
-//= require tinymce/tinymce.min.js
-//= require_self    
+// = require tinymce/tinymce.min.js 
 
-
-tinymce.init({
-    selector: "textarea",
-    plugins: "fullscreen wordcount media image preview code table",
-    toolbar: "bold italic underline strikethrough subscript superscript outdent indent selectall removeformat blockquote numlist bullist alignleft aligncenter alignright alignjustify undo redo fullscreen media image code preview underline inserttable tableprops deletetable cell row column wordcount"
- });  
+// 
+// tinymce.init({
+//     selector: "textarea",
+//     plugins: "fullscreen wordcount media image preview code table",
+//     toolbar: "bold italic underline strikethrough subscript superscript outdent indent selectall removeformat blockquote numlist bullist alignleft aligncenter alignright alignjustify undo redo fullscreen media image code preview underline inserttable tableprops deletetable cell row column wordcount"
+//  });  
   
 $(document).on("focus", "[data-behaviour~='datepicker']", function(e){
     $(this).datepicker({"format": "yyyy-mm-dd", "weekStart": 1, "autoclose": true});
