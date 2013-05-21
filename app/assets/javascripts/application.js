@@ -23,7 +23,8 @@ tinymce.init({
     selector: "textarea",
     plugins: "fullscreen wordcount media image preview code table link",
     toolbar: "bold italic underline strikethrough subscript superscript | outdent indent numlist bullist alignleft aligncenter alignright alignjustify | selectall removeformat | link blockquote  undo redo fullscreen media image code preview ",
-    toolbar2: "table tableprops deletetable cell row column wordcount link"
+    toolbar2: "table tableprops deletetable cell row column wordcount link",
+    extended_valid_elements : "iframe[src|width|height|name|align|frameborder],object[classid|codebase|width|height|align],param[name|value],embed[quality|type|pluginspage|width|height|src|align|allowFullScreen|flashvars|wmode]"
  });  
   
 $(document).on("focus", "[data-behaviour~='datepicker']", function(e){

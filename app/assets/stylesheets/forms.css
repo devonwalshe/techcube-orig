@@ -35,3 +35,25 @@ select.box_select{
 input.fill {
   width: 97%;
 }
+
+.button_to{
+
+  display:inline !important;
+}
+
+.nostyle{
+  background: #fff !important;
+  background-color: #fff !important;
+  border:none !important;
+  color:rgb(0,136,204);
+  margin:0;
+  padding:0;  
+  border-radius:none !important;
+  -moz-appearance: none;  
+  box-shadow: none !important;
+  -webkit-appearance: none;
+}
+
+.button_to div {
+  display: inline;
+}

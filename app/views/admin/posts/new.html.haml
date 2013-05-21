@@ -1,14 +1,14 @@
 .container
   .row
     .span12
-      
-      New post Form
+      %h2.miso.twhite
+        New post Form
   .row
     .span12
     
       = form_for @post do |f|
         %h2.twhite.miso
-          = f.label :title
+          Title
         
         .box_top.top-ten-margin
           .box_tr{:style=> "background: #fff"} 
@@ -29,7 +29,7 @@
         
         = f.hidden_field :user_id, :value => current_user.id if signed_in?
         %h2.twhite.miso
-          = f.label :content
+          Content
         
         .box_top.top-ten-margin
           .box_tr{:style=> "background: #fff"} 
@@ -58,7 +58,7 @@
             .colmid
               .box_ml
                 .box_mm
-                  .box_mc{:style=> "background: rgb(19,159,219); padding: 3px 10px 5px 15px"}
+                  .box_mc{:style=> "background: rgb(19,159,219); padding: 3px 20px 5px 15px"}
                     .block.t1-4em
                       = f.submit "Create Post", :class => "button-nostyle miso t1-2em"
 

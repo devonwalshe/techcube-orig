@@ -36,13 +36,14 @@
                     .span2
                       =post.user.name if post.user
                     .span3
-                      %a{:href => "news/#{post.to_url}"}
-                        View Post
-                      || 
-                      %a{:href => "admin/posts/edit/#{post.id}"}
-                        Edit
-                      ||
-                      =link_to 'Delete', post, :method => :delete, :confirm => "This will permanently delete the post, are you sure?"   
+                      .inline
+                        %a{:href => "news/#{post.to_url}"}
+                          View Post
+                        || 
+                        %a{:href => "admin/posts/edit/#{post.id}"}
+                          Edit
+                        ||
+                        =button_to 'Delete', post, :method => :delete, :confirm => "This will permanently delete the post, are you sure?",   :class=>"nostyle"   
 
       .box_bottom
         .box_br 
@@ -88,8 +89,7 @@
                       %a{:href => "admin/pages/edit/#{page.id}"}
                         Edit
                       ||
-                      %a{:href => "admin/pages/destroy/#{page.id}", :confirm => "This will permanently delete the page, are you sure?"}
-                        Delete
+                      =button_to 'Delete', page, :method => :delete, :confirm => "This will permanently delete the post, are you sure?",   :class=>"nostyle"
                                 
       .box_bottom
         .box_br 
@@ -137,8 +137,7 @@
                       %a{:href => "admin/users/edit/#{user.id}"}
                         Edit
                       ||   
-                      %a{:href => "admin/users/destroy/#{user.id}", :confirm => "This will permanently delete the user, are you sure?"}
-                        Delete          
+                      =button_to 'Delete', user, :method => :delete, :confirm => "This will permanently delete the post, are you sure?",   :class=>"nostyle"          
 
       .box_bottom
         .box_br 
@@ -201,8 +200,7 @@
                       %a{:href => "admin/jobs/edit/#{job.id}"}
                         Edit
                       ||
-                      %a{:href => "admin/jobs/destroy/#{job.id}", :confirm => "This will permanently delete the page, are you sure?"}
-                        Delete 
+                      =button_to 'Delete', job, :method => :delete, :confirm => "This will permanently delete the post, are you sure?",   :class=>"nostyle" 
 
       .box_bottom
         .box_br 

@@ -1,7 +1,7 @@
 .container
   .row
     .span12
-      %h1
+      %h1.twhite.miso
         
         Edit post
       .row
@@ -9,7 +9,7 @@
 
           = form_for @post do |f|
             %h2.twhite.miso
-              = f.label :title
+              Title
 
             .box_top.top-ten-margin
               .box_tr{:style=> "background: #fff"} 
@@ -27,27 +27,9 @@
               .box_bl
               .box_bm
 
-              %h2.twhite.miso
-                = f.label :url
-
-              .box_top.top-ten-margin
-                .box_tr{:style=> "background: #fff"} 
-                .box_tl
-                .box_tm{:style=> "background: #fff"} 
-              .box_mid.threecol
-                .colmid
-                  .box_ml
-                    .box_mm
-                      .box_mc{:style=> "background: #fff"}
-
-                        = f.text_field :url, :class => "fill", :value => "#{@post.url}"   
-              .box_bottom
-                .box_br 
-                .box_bl
-                .box_bm
 
             %h2.twhite.miso
-              = f.label :content
+              Content
 
             .box_top.top-ten-margin
               .box_tr{:style=> "background: #fff"} 
@@ -76,7 +58,7 @@
                 .colmid
                   .box_ml
                     .box_mm
-                      .box_mc{:style=> "background: rgb(19,159,219); padding: 3px 10px 5px 15px"}
+                      .box_mc{:style=> "background: rgb(19,159,219); padding: 3px 20px 5px 15px"}
                         .block.t1-4em
                           = f.submit "Save Page", :class => "button-nostyle miso t1-2em"
 
