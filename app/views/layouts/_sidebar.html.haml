@@ -65,24 +65,11 @@
         .box_bl
         .box_bm    
       
-      = f.label :iama, "I am"
-      
-      .box_top
-        .box_tr 
-        .box_tl
-        .box_tm{:style=> "background: #fff"} 
-      .box_mid.threecol
-        .colmid
-          .box_ml
-            .box_mm
-              .box_mc{:style=> "background: #fff"}
-                .block
-                  = f.select :iama, ["working in a startup", "an investor", "a freelancer", "working in professional services", "a student", "just interested"], {}, :class => "miso"
-                  -# %div{:style => "display:inline-block; position:relative; background: #ddd; height:10px; width:10px; bottom:0px; right: 20px"}
-      .box_bottom
-        .box_br 
-        .box_bl
-        .box_bm 
+      .t1em.tbold.top-bottom-ten-margin
+        I am
+
+      = f.select :iama, ["working in a startup", "an investor", "a freelancer", "working in professional services", "a student", "just interested"], {}, :class => "miso"     
+                  
       
       .pull-right.top-ten-margin.w100
 
@@ -94,7 +81,7 @@
           .colmid
             .box_ml
               .box_mm
-                .box_mc{:style=> "background: rgb(19,159,219); padding: 3px 10px 5px 15px"}
+                .box_mc{:style=> "background: rgb(19,159,219); padding: 4px 10px 7px 15px"}
                   .block.t1-4em
                     = f.submit "Sign up", :class => "button-nostyle miso t1-2em"
                   

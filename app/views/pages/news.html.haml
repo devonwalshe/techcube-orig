@@ -19,7 +19,7 @@
                       %h2
                         %a{:href => "/news/#{post.to_url}"}
                           =post.title
-                      %div
+                      %div.muli.t0-8em
                         =truncate_html post.body.html_safe, length: 150, omission: '...(continued)'
                       .block.ten-padding.t1-2em
                         %a{:href => "/news/#{post.to_url}"}
