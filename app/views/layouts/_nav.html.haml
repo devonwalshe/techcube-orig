@@ -31,49 +31,48 @@
       =image_tag("/assets/f_logo.png", :size=>"25x25")
     %a{:href => "http://www.twitter.com/edtechcube"}
       =image_tag("/assets/t_logo.png", :size=>"40x40") 
-.block{:style => "position:relative; left:235px; top:110px; color:#fff; width: 715px; height: 100px; font-size:1.5em; font-weight:light  "}
-  .miso
-    -if params[:controller] == "home" and params[:action] == "index"
-      %div{:style => "height:60px; color:#fff; background-color:rgba(19,159,219,0.3);display:inline-block; padding: 10px 10px 0px 10px; font-weight:bold"}
-        %a{:href=>"/", :style => "color:#fff"}
-          Home
+#nav-bar.block{:style => "position:relative; left:235px; top:110px; width: 715px; height: 100px"}
+  -if params[:controller] == "home" and params[:action] == "index"
+    .nav-item.nav-item-active
+      %a{:href=>"/", :style => "color:#fff"}
+        Home
+  -else
+    .nav-item
+      %a{:href=>"/", :style => "color:#fff"}
+        Home
+
+
+  -if params[:action] == "news"
+    .nav-item.nav-item-active
+      %a{:href=>"/news", :style => "color:#fff"}
+        News
+  -else
+    .nav-item
+      %a{:href=>"/news", :style => "color:#fff"}
+        News
+  -if params[:controller] == "events"
+    .nav-item.nav-item-active
+      %a{:href=>"/events", :style => "color:#fff"}
+        Events
+  -else
+    .nav-item
+      %a{:href=>"/events", :style => "color:#fff"}
+        Events        
+  -if params[:controller] == "jobs"
+    .nav-item.nav-item-active
+      %a{:href=>"/jobs", :style => "color:#fff"}
+        Jobs
+  -else
+    .nav-item
+      %a{:href=>"/jobs", :style => "color:#fff"}
+        Jobs
+
+  -Page.all.each do |page|
+    -if params[:url] == page.url
+      .nav-item.nav-item-active
+        %a{:href=>"/#{page.url}", :style => "color:#fff"}
+          =page.title
     -else
-      %div{:style => "height:60px; color:#fff;display:inline-block; padding: 10px 10px 0px 10px"}
-        %a{:href=>"/", :style => "color:#fff"}
-          Home
-  
-  
-    -if params[:action] == "news"
-      %div{:style => "height:60px; color:#fff; background-color:rgba(19,159,219,0.3);display:inline-block; padding: 10px 10px 0px 10px; font-weight:bold"}
-        %a{:href=>"/news", :style => "color:#fff"}
-          News
-    -else
-      %div{:style => "height:60px; color:#fff;display:inline-block; padding: 10px 10px 0px 10px"}
-        %a{:href=>"/news", :style => "color:#fff"}
-          News
-    -if params[:controller] == "events"
-      %div{:style => "height:60px; color:#fff; background-color:rgba(19,159,219,0.3);display:inline-block; padding: 10px 10px 0px 10px; font-weight:bold"}
-        %a{:href=>"/events", :style => "color:#fff"}
-          Events
-    -else
-      %div{:style => "height:60px; color:#fff;display:inline-block; padding: 10px 10px 0px 10px"}
-        %a{:href=>"/events", :style => "color:#fff"}
-          Events        
-    -if params[:controller] == "jobs"
-      %div{:style => "height:60px; color:#fff; background-color:rgba(19,159,219,0.3);display:inline-block; padding: 10px 10px 0px 10px; font-weight:bold"}
-        %a{:href=>"/jobs", :style => "color:#fff"}
-          Jobs
-    -else
-      %div{:style => "height:60px; color:#fff;display:inline-block; padding: 10px 10px 0px 10px"}
-        %a{:href=>"/jobs", :style => "color:#fff"}
-          Jobs
-  
-    -Page.all.each do |page|
-      -if params[:url] == page.url
-        %div{:style => "height:60px; color:#fff; background-color:rgba(19,159,219,0.3);display:inline-block; padding: 10px 10px 0px 10px"}
-          %a{:href=>"/#{page.url}", :style => "color:#fff"}
-            =page.title
-      -else
-        %div{:style => "height:60px; color:#fff; display:inline-block; padding: 10px 10px 0px 10px;"}
-          %a{:href=>"/#{page.url}", :style => "color:#fff"}
-            =page.title
+      .nav-item
+        %a{:href=>"/#{page.url}", :style => "color:#fff"}
+          =page.title

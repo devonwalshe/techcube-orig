@@ -47,6 +47,18 @@ position:relative; left:235px; top:125px; color:#fff; width: 715px; height: 100p
 
 ### Navigation stuff ###
 
+#nav-bar{
+  
+  position:relative; left:235px; top:110px; color:#fff; width: 715px; height: 100px; font-size:1.5em;   
+}
+ 
+.nav-item{
+  height:60px; color:#fff; display:inline-block; padding: 10px 10px 0px 10px; font-size:1.6em; font-family:'MisoLight'; font-weight:100;
+}
+
+.nav-item-active{
+  background-color:rgba(19,159,219,0.3);
+}
 
 
 .tumblr_posts {
