@@ -1,15 +1,31 @@
-
-.container
+.container    
   .row
-    .span12
-      %h1.top-twenty-margin 
-        Sign in   
-      .top-twenty-margin
-        = form_for :session, :url => sessions_path do |f|
-          = f.label :email
-          = f.text_field :email
-          = f.label :password
-          = f.password_field :password
-          .block
-            = f.submit "Sign in", :class => "btn btn-large top-twenty-margin btn-success"   
+    .span4
+      .box_top
+        .box_tr{:style=> "background: #eee"} 
+        .box_tl
+        .box_tm{:style=> "background: #eee"} 
+
+      .box_mid.threecol
+        .colmid
+          .box_ml
+            .box_mm
+              .box_mc{:style=> "background: #eee"}
+                %h1.top-twenty-margin 
+                  Sign in   
+                .top-twenty-margin
+                  = form_for :session, :url => sessions_path do |f|
+                    = f.label :email
+                    = f.text_field :email
+                    = f.label :password
+                    = f.password_field :password
+                    .block
+                      = f.submit "Sign in", :class => "btn btn-large top-twenty-margin btn-success" 
+
+      .box_bottom
+        .box_br 
+        .box_bl
+        .box_bm  
+              
+  
 		

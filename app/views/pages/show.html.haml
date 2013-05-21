@@ -1,10 +1,15 @@
 .container
   .row
-    .span12
-      %h2
-        =@page.title
-  .row
-    .span12
-      =@page.body.html_safe
-      .block  
-        =params
+    .span9
+      .row
+        .span12
+          %h2
+            =@page.title
+        
+      .row
+        .span12
+          =@page.body.html_safe
+          .block  
+            =params
+    .span3
+      =render :partial => "layouts/sidebar"

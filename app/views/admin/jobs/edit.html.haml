@@ -1,44 +1,105 @@
 .container
   .row
     .span12
-      %h1
+      %h2.miso.twhite
         Edit Job
+        
   .row
     .span12
-    
+      .box_top
+        .box_tr{:style=> "background: #fff"} 
+        .box_tl
+        .box_tm{:style=> "background: #fff"} 
+      .box_mid.threecol
+        .colmid
+          .box_ml
+            .box_mm
+              .box_mc{:style=> "background: #fff"}
+                Advice on creating an effective job advert       
+                %a.block{:href => "http://jobs.guardian.co.uk/article/4277804/how-to-write-good-job-advertisements/"}
+                  http://jobs.guardian.co.uk/article/4277804/how-to-write-good-job-advertisements/    
+
+      .box_bottom
+        .box_br 
+        .box_bl
+        .box_bm
+
+  .row
+    .span12
       = form_for @job do |f|
-        = f.label :approved
-        = f.check_box :approved, :value => "#{@job.approved}"
-        = f.label :company_description
-        = f.text_field :company_description, :value => "#{@job.company_description}"
-        = f.label :company_name
-        = f.text_field :company_name, :value => "#{@job.company_name}"
-        = f.label "How to apply"
-        = f.text_area :how_to, :value => "#{@job.how_to}"
-        = f.label :job_description
-        = f.text_area :job_description, :value => "#{@job.job_description}"
-        = f.label :job_title
-        = f.text_field :job_title, :value => "#{@job.job_title}"
-        = f.label "when does it start?"
-        = f.text_field :start_date, :"data-behaviour" => "datepicker", :value => "#{@job.start_date}"
-        = f.label "when would you like this ad to go live?"
-        = f.text_field :live_date, :"data-behaviour" => "datepicker", :value => "#{@job.live_date}"
-        = f.label "when would you like this ad to expire?"
-        = f.text_field :expiry_date, :"data-behaviour" => "datepicker", :value => "#{@job.expiry_date}"
-        = f.label "What Town / City?"
-        = f.text_field :location, :value => "#{@job.location}"
-        = f.label :postcode
-        = f.text_field :postcode, :value => "#{@job.postcode}"
-        = f.label "Describe the ideal candidate"
-        = f.text_area :person_description, :value => "#{@job.person_description}"
-        = f.label :salary
-        = f.select :salary, ["Under £10,000", "£15,000-£20,000", "£20,000-£30,000", "£30,000-£40,000", "£40,000-£50,000", "£50,000-£60,000", "£60,000-£80,000", "£80,000-£100,000", "£100,000 +"], :value => "#{@job.salary}"
-        = f.label "Hours per week"
-        = f.select :hours_per_week, ["Full Time", "Part Time", "0-10", "10-15", "15-20", "20-25", "25-30", "30-35"], :value => "#{@job.hours_per_week}"
-        = f.label "Your email"
-        = f.text_field :user_email, :value => "#{@job.user_email}"
-        = f.label "Your name"
-        = f.text_field :user_name, :value => "#{@job.user_name}"
-        
-        .block
-          = f.submit "save job", :class => "btn btn-large top-twenty-margin btn-success pull-left"
+        .row
+          .span12
+            .box_top
+              .box_tr{:style=> "background: #fff"} 
+              .box_tl
+              .box_tm{:style=> "background: #fff"} 
+            .box_mid.threecol
+              .colmid
+                .box_ml
+                  .box_mm
+                    .box_mc{:style=> "background: #fff"}
+                      .row
+                        .span5
+                          = f.label :approved
+                          = f.check_box :approved
+                          = f.label :company_description
+                          = f.text_field :company_description, :value => "#{@job.company_description}"
+                          = f.label :company_name
+                          = f.text_field :company_name, :value => "#{@job.company_name}"
+                          = f.label :job_title
+                          = f.text_field :job_title, :value => "#{@job.job_title}"
+                          = f.label "Your email"
+                          = f.text_field :user_email, :value => "#{@job.user_email}"
+                          = f.label "Your name"
+                          = f.text_field :user_name, :value => "#{@job.user_name}"   
+                        .span4
+                          = f.label :salary
+                          = f.select :salary, ["Under £10,000", "£15,000-£20,000", "£20,000-£30,000", "£30,000-£40,000", "£40,000-£50,000", "£50,000-£60,000", "£60,000-£80,000", "£80,000-£100,000", "£100,000 +"], :value => "#{@job.salary}"
+                          = f.label "Hours per week"
+                          = f.select :hours_per_week, ["Full Time", "Part Time", "0-10", "10-15", "15-20", "20-25", "25-30", "30-35"], :value => "#{@job.hours_per_week}" 
+                          = f.label "when does it start?"
+                          = f.text_field :start_date, :"data-behaviour" => "datepicker", :value => "#{@job.start_date}"
+                          = f.label "when would you like this ad to go live?"
+                          = f.text_field :live_date, :"data-behaviour" => "datepicker", :value => "#{@job.live_date}"
+                          = f.label "when would you like this ad to expire?"
+                          = f.text_field :expiry_date, :"data-behaviour" => "datepicker", :value => "#{@job.expiry_date}"
+                          = f.label "What Town / City?"
+                          = f.text_field :location, :value => "#{@job.location}"
+                          = f.label :postcode
+                          = f.text_field :postcode, :value => "#{@job.postcode}"      
+                                                
+            .box_bottom
+              .box_br 
+              .box_bl
+              .box_bm
+
+        .row
+          .span12
+            %h2.miso.twhite
+              How to apply
+            = f.text_area :how_to, :class => "tinymce", :rows => 10, :value => "#{@job.how_to}"
+            %h2.miso.twhite
+              Job description
+            = f.text_area :job_description, :class => "tinymce", :rows => 10, :value => "#{@job.job_description}"
+            %h2.miso.twhite
+              Describe the ideal candidate
+            = f.text_area :person_description, :class => "tinymce", :rows => 10, :value => "#{@job.person_description}"  
+
+        .inline-block
+          .box_top.top-twenty-margin
+            .box_tr{:style=> "background: rgb(19,159,219)"} 
+            .box_tl
+            .box_tm{:style=> "background: rgb(19,159,219)"} 
+          .box_mid.threecol
+            .colmid
+              .box_ml
+                .box_mm
+                  .box_mc{:style=> "background: rgb(19,159,219); padding: 3px 20px 5px 15px"}
+                    .block.t1-4em
+                      = f.submit "Save Job Advert", :class => "button-nostyle miso t1-2em"
+
+
+          .box_bottom
+            .box_br 
+            .box_bl
+            .box_bm

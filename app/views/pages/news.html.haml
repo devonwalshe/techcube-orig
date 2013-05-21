@@ -1,10 +1,39 @@
 .container
   .row
-    .span12
-      TechCube news Page
-  .row
-    .span12
-      -@posts.each do |post|
-        %h2
-          %a{:href => "/news/#{post.to_url}"}
-            =post.title
+    .span9
+                
+      -@posts[0..-1].each do |post|
+        .row
+          .span9
+            .miso.t2em.top-twenty-margin
+              =post.updated_at.strftime("%A %B %m, %Y // %H:%M:%S")
+            .box_top
+              .box_tr 
+              .box_tl
+              .box_tm{:style=> "background: #fff"} 
+            .box_mid.threecol
+              .colmid
+                .box_ml
+                  .box_mm
+                    .box_mc{:style=> "background: #fff"}
+                      %h2
+                        %a{:href => "/news/#{post.to_url}"}
+                          =post.title
+                      %div
+                        =truncate_html post.body.html_safe, length: 150, omission: '...(continued)'
+                      .block.ten-padding.t1-2em
+                        %a{:href => "/news/#{post.to_url}"}
+                          read more
+                      -if signed_in?
+                        .pull-right
+                          %a{:href => "admin/posts/edit/#{post.id}"}
+                            Edit this post
+
+            .box_bottom
+              .box_br 
+              .box_bl
+              .box_bm     
+    .span3
+      =render :partial => "/layouts/sidebar"
+
+                                                                  

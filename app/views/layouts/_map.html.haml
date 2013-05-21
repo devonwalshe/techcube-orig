@@ -1,7 +1,21 @@
-.top-twenty-margin
-  .t2em.bottom-twenty-margin
-    Where we are
-  #map_canvas.bottom-twenty-margin{:style => "width:220px; height:220px; border:1px solid #aaa"}
+.bottom-ten-margin.tbold
+  Where we are
+.box_top
+  .box_tr{:style=> "background: #fff"} 
+  .box_tl
+  .box_tm{:style=> "background: #fff"} 
+.box_mid.threecol
+  .colmid
+    .box_ml
+      .box_mm
+        .box_mc{:style=> "background: #ccc; padding:0"}
+          #map_canvas{:style => "width:210px; height:200px;"}
+
+.box_bottom
+  .box_br 
+  .box_bl
+  .box_bm
+  
 :javascript
   function initialize() {
     var mapOptions = {
@@ -23,14 +37,14 @@
 
     var marker = new google.maps.Marker({
        icon: cube_image,
-       position:  new google.maps.LatLng(55.939959, -3.182),
+       position:  new google.maps.LatLng(55.940290, -3.182315),
        map: map,
        title: "whats up!"
     });
 
     var panoramaOptions = {
 
-      position: new google.maps.LatLng(55.9406, -3.1831),
+      position: new google.maps.LatLng(55.940365, -3.182361),
       pov:{
         heading:34,
         pitch:10,

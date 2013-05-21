@@ -1,159 +1,211 @@
 .container
   .row
     .span12
-      %h2
+      %h1.miso.twhite
         Admin area
   
   .row
     .span12
-      .inline-block.tbold.top-twenty-margin{:style => "font-size:2em;"}
+      .inline-block.tbold.twhite.miso.top-twenty-margin{:style => "font-size:2em;"}
         News Posts   
       %a{:href => "admin/posts/new"}
         {+ new post}
   .row
     .span12
-      .row
-        .tbold
-          .span4
-            Title
-          .span6
-            Author
-          .span2
-            Tools    
-      -@posts.each do |post|
-        .row
-          .span4
-            =post.title
-          .span6
-            =post.user.name if post.user
-          .span2
-            %a{:href => "news/#{post.to_url}"}
-              View Post
-            || 
-            %a{:href => "admin/posts/edit/#{post.id}"}
-              Edit
-            ||
-            =link_to 'Delete', post, :method => :delete, :confirm => "This will permanently delete the post, are you sure?"
+      .box_top.top-ten-margin
+        .box_tr{:style=> "background: #fff"} 
+        .box_tl
+        .box_tm{:style=> "background: #fff"} 
+      .box_mid.threecol
+        .colmid
+          .box_ml
+            .box_mm
+              .box_mc{:style=> "background: #fff"}
+                .row
+                  .tbold.t1-2em
+                    .span6
+                      Title
+                    .span2
+                      Author
+                    .span3
+                      Tools    
+                -@posts.each do |post|
+                  .row
+                    .span6
+                      =post.title
+                    .span2
+                      =post.user.name if post.user
+                    .span3
+                      %a{:href => "news/#{post.to_url}"}
+                        View Post
+                      || 
+                      %a{:href => "admin/posts/edit/#{post.id}"}
+                        Edit
+                      ||
+                      =link_to 'Delete', post, :method => :delete, :confirm => "This will permanently delete the post, are you sure?"   
+
+      .box_bottom
+        .box_br 
+        .box_bl
+        .box_bm
+      
 
   .row
     .span12
-      .inline-block.tbold.top-twenty-margin{:style => "font-size:2em;"}
+      .inline-block.miso.twhite.tbold.top-twenty-margin{:style => "font-size:2em;"}
         Pages   
       %a{:href => "admin/pages/new"}
         {+ new page}
   .row
     .span12
-      .row
-        .tbold
-          .span4
-            Title
-          .span6
-            URL
-          .span2
-            Tools    
-      -@pages.each do |page|
-        .row
-          .span4
-            =page.title
-          .span6
-            =page.url
-          .span2
-            %a{:href => "#{page.url}"}
-              View Page
-            || 
-            %a{:href => "admin/pages/edit/#{page.id}"}
-              Edit
-            ||
-            %a{:href => "admin/pages/destroy/#{page.id}", :confirm => "This will permanently delete the page, are you sure?"}
-              Delete
+      .box_top.top-ten-margin
+        .box_tr{:style=> "background: #fff"} 
+        .box_tl
+        .box_tm{:style=> "background: #fff"} 
+      .box_mid.threecol
+        .colmid
+          .box_ml
+            .box_mm
+              .box_mc{:style=> "background: #fff"}
+                .row
+                  .tbold.t1-2em
+                    .span6
+                      Title
+                    .span2
+                      URL
+                    .span3
+                      Tools    
+                -@pages.each do |page|
+                  .row
+                    .span6
+                      =page.title
+                    .span2
+                      =page.url
+                    .span3
+                      %a{:href => "#{page.url}"}
+                        View Page
+                      || 
+                      %a{:href => "admin/pages/edit/#{page.id}"}
+                        Edit
+                      ||
+                      %a{:href => "admin/pages/destroy/#{page.id}", :confirm => "This will permanently delete the page, are you sure?"}
+                        Delete
+                                
+      .box_bottom
+        .box_br 
+        .box_bl
+        .box_bm
+      
           
   .row
     .span12
-      .inline-block.tbold.top-twenty-margin{:style => "font-size:2em;"}
+      .inline-block.tbold.miso.twhite.top-twenty-margin{:style => "font-size:2em;"}
         Users   
       %a{:href => "admin/users/new"}
         {+ new user}  
-      .row
-        .tbold
-          .span4
-            name
-          .span4
-            email
-          .span2
-            admin?
-          .span2
-            tools
-      -@users.each do |user|
-        .row
-          .span4
-            =user.name
-          .span4
-            =user.email
-          .span2
-            =user.admin?
-          .span2
-             
-            %a{:href => "admin/users/edit/#{user.id}"}
-              Edit
-            ||   
-            %a{:href => "admin/users/destroy/#{user.id}", :confirm => "This will permanently delete the user, are you sure?"}
-              Delete
+  .row 
+    .span12
+      .box_top.top-ten-margin
+        .box_tr{:style=> "background: #fff"} 
+        .box_tl
+        .box_tm{:style=> "background: #fff"} 
+      .box_mid.threecol
+        .colmid
+          .box_ml
+            .box_mm
+              .box_mc{:style=> "background: #fff"}
+                .row
+                  .tbold.t1-2em
+                    .span3
+                      name
+                    .span3
+                      email
+                    .span2
+                      admin?
+                    .span3
+                      tools
+                -@users.each do |user|
+                  .row
+                    .span3
+                      =user.name
+                    .span3
+                      =user.email
+                    .span2
+                      =user.admin?
+                    .span3
+
+                      %a{:href => "admin/users/edit/#{user.id}"}
+                        Edit
+                      ||   
+                      %a{:href => "admin/users/destroy/#{user.id}", :confirm => "This will permanently delete the user, are you sure?"}
+                        Delete          
+
+      .box_bottom
+        .box_br 
+        .box_bl
+        .box_bm
+  
                  
   .row
     .span12
-      .inline-block.tbold.top-twenty-margin{:style => "font-size:2em;"}
+      .inline-block.tbold.miso.twhite.top-twenty-margin{:style => "font-size:2em;"}
         Jobs   
       %a{:href => "admin/jobs/new"}
         {+ new job}
   .row
-    .tbold
-      .span1
-        Company
-      .span1
-        Job Title
-      .span1
-        Location
-      .span1
-        Salary
-      .span2
-        Start Date
-      .span2
-        Goes Live
-      .span2
-        Expires
-      .span2
-        Tools 
-  
-  -@jobs.each do |job|
-    .row
-      .span1
-        =job.company_name
-      .span1
-        =job.job_title
-      .span1
-        =job.location
-      .span1
-        =job.salary
-      .span2
-        =job.start_date.strftime("%A %B %d, %Y")
-      .span2
-        =job.live_date.strftime("%A %B %d, %Y")
-      .span2
-        =job.expiry_date.strftime("%A %B %d, %Y")
-      .span2
-        %a{:href => "/jobs/#{job.to_url}"}
-          View Page
-        || 
-        %a{:href => "admin/jobs/edit/#{job.id}"}
-          Edit
-        ||
-        %a{:href => "admin/jobs/destroy/#{job.id}", :confirm => "This will permanently delete the page, are you sure?"}
-          Delete 
+    .span12
+      .box_top.top-ten-margin
+        .box_tr{:style=> "background: #fff"} 
+        .box_tl
+        .box_tm{:style=> "background: #fff"} 
+      .box_mid.threecol
+        .colmid
+          .box_ml
+            .box_mm
+              .box_mc{:style=> "background: #fff"}
+                .row
+                  .tbold.t1-2em
+                    .span2
+                      Company
+                    .span2
+                      Job Title
+                    .span1
+                      Location
+                    .span1
+                      Salary
+                    .span1
+                      Live
+                    .span1
+                      Expires
+                    .span3
+                      Tools 
 
-  .row
-    .span12
-      %h4
-        Events
-  .row
-    .span12
-      Events
+                -@jobs.each do |job|
+                  .row
+                    .span2
+                      =job.company_name
+                    .span2
+                      =job.job_title
+                    .span1
+                      =job.location
+                    .span1
+                      =job.salary
+                    .span1
+                      =job.live_date.strftime("%-d/%-m/%y")
+                    .span1
+                      =job.expiry_date.strftime("%-d/%-m/%y")
+                    .span3
+                      %a{:href => "/jobs/#{job.to_url}"}
+                        View Page
+                      || 
+                      %a{:href => "admin/jobs/edit/#{job.id}"}
+                        Edit
+                      ||
+                      %a{:href => "admin/jobs/destroy/#{job.id}", :confirm => "This will permanently delete the page, are you sure?"}
+                        Delete 
+
+      .box_bottom
+        .box_br 
+        .box_bl
+        .box_bm
+      

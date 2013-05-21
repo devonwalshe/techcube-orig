@@ -1,5 +1,10 @@
 class JobsController < ApplicationController
   
+  def index
+    @jobs = live_jobs
+    render "pages/jobs"
+  end
+  
   def new
     @job = Job.new
     render "/admin/jobs/new/"

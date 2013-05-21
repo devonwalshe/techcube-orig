@@ -6,11 +6,80 @@
     .span12
     
       = form_for @page do |f|
-        = f.label :title
-        = f.text_field :title
-        = f.label :url
-        = f.text_field :url
-        = f.label :content
-        = f.text_area :body, :class => "tinymce", :rows => 10, :cols => 120
-        .block
-          = f.submit "create page", :class => "btn btn-large top-twenty-margin btn-success pull-left"   
+        %h2.twhite.miso
+          = f.label :title
+        
+        .box_top.top-ten-margin
+          .box_tr{:style=> "background: #fff"} 
+          .box_tl
+          .box_tm{:style=> "background: #fff"} 
+        .box_mid.threecol
+          .colmid
+            .box_ml
+              .box_mm
+                .box_mc{:style=> "background: #fff"}
+                  
+                  = f.text_field :title, :class => "fill"
+        .box_bottom
+          .box_br 
+          .box_bl
+          .box_bm
+        
+          %h2.twhite.miso
+            = f.label :url
+
+          .box_top.top-ten-margin
+            .box_tr{:style=> "background: #fff"} 
+            .box_tl
+            .box_tm{:style=> "background: #fff"} 
+          .box_mid.threecol
+            .colmid
+              .box_ml
+                .box_mm
+                  .box_mc{:style=> "background: #fff"}
+
+                    = f.text_field :url, :class => "fill"
+          .box_bottom
+            .box_br 
+            .box_bl
+            .box_bm
+        
+        %h2.twhite.miso
+          = f.label :content
+        
+        .box_top.top-ten-margin
+          .box_tr{:style=> "background: #fff"} 
+          .box_tl
+          .box_tm{:style=> "background: #fff"} 
+        .box_mid.threecol
+          .colmid
+            .box_ml
+              .box_mm
+                .box_mc{:style=> "background: #fff"}
+                  = f.text_area :body, :class => "tinymce", :rows => "15", :cols => "300"
+                  = tinymce 
+            
+        .box_bottom
+          .box_br 
+          .box_bl
+          .box_bm
+       
+        
+        .inline-block
+          .box_top.top-twenty-margin
+            .box_tr{:style=> "background: rgb(19,159,219)"} 
+            .box_tl
+            .box_tm{:style=> "background: rgb(19,159,219)"} 
+          .box_mid.threecol
+            .colmid
+              .box_ml
+                .box_mm
+                  .box_mc{:style=> "background: rgb(19,159,219); padding: 3px 10px 5px 15px"}
+                    .block.t1-4em
+                      = f.submit "Create Page", :class => "button-nostyle miso t1-2em"
+
+
+          .box_bottom
+            .box_br 
+            .box_bl
+            .box_bm

@@ -5,31 +5,19 @@ Tc::Application.routes.draw do
   resources :jobs
   resources :posts
   resources :users
-  get "home/index"
-  post "contacts/create"
-  post "events/create"
-  post "enquiries/create"
-  post "jobs/create"
-  
-  match "home" => "home#index"
-  match "tenants" => "home#tenants"
-  match "community" => "home#community"
-  match "mission" => "home#mission"
-  # match "news" => "home#news" 
-  match "events" => "home#events"  
-  match "jobs" => "home#jobs"
+  resources :events
+
   match "surf" => "home#surf"
   
   match '/' => 'home#surf', :constraints => { :subdomain => "surf"}
   
-  
-  
   match "/signin", :to => "sessions#new"
   match "/signout", :to => "sessions#destroy"
   match "/admin", :to => "admin#index"
+  
   match "/admin/:controller/:action/" => "pages#:action" 
   match "/admin/:controller/:action/:id" => "pages#:action"
-  match "/news" => "pages#news"
+  match "/news" => "pages#news"     
   match "/news/:post" => "posts#show"
   match "/jobs/:post" => "jobs#show"
   match '/:url' => 'pages#show'     

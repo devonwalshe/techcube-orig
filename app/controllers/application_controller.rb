@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   
   protect_from_forgery
   # before_filter :check_uri
+  before_filter :get_contact
   include SessionsHelper
   include ApplicationHelper
   
@@ -10,9 +11,12 @@ class ApplicationController < ActionController::Base
   end
   
   def live_jobs
-      Job.where("today >= live_date AND today <= expiry_date")
+      Job.where("current_date >= live_date AND current_date <= expiry_date")
   end
   
+  def get_contact
+    @contact = Contact.new
+  end
   
   private
     

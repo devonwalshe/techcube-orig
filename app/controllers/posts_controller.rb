@@ -33,7 +33,7 @@ end
 def update
   @post = Post.find(params[:id])
   if @post.update_attributes(params[:post])
-    flash[:success] = "Page updated."
+    flash[:success] = "Post updated."
     redirect_to "/admin"
   else
     flash[:error] = "Error updating page"

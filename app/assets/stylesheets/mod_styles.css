@@ -505,7 +505,19 @@
 }
 
 body{
-  font-family: "Dosis";
+  font-family: "Muli";
+}
+
+.misolight{
+  font-family: "MisoLight";
+}
+
+.miso{
+  font-family: "Miso";
+}
+
+.misobold{
+  font-family: "MisoBold";
 }
 
 .bitter{

@@ -8,19 +8,6 @@ class HomeController < ApplicationController
     @contact = Contact.new
   end
   
-  def tenants
-    @contact = Contact.new
-    @enquiry = Enquiry.new
-  end
-  
-  def community
-    @contact = Contact.new
-  end
-  
-  def mission
-    @contact = Contact.new
-  end
-  
   def news
     @contact = Contact.new
     @tumblr_hash = get_tumblr_articles("http://blog.techcu.be/api/read?start=0&num=5")
@@ -63,12 +50,7 @@ class HomeController < ApplicationController
   end
   
   
-  def get_otc_events
-    uri = URI.parse("http://opentechcalendar.co.uk/index.php/location/1/json")
-    http = Net::HTTP.new(uri.host, uri.port)
-    response = http.request(Net::HTTP::Get.new(uri.request_uri))
-    events = JSON.parse(response.body)
-  end
+
   
   def modify_photo_posts(articles)
     articles.each do |article|
