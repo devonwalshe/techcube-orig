@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
         
      else
         sign_in user
-        redirect_back_or "/home"
+        redirect_back_or "/admin"
      end
      
   end
