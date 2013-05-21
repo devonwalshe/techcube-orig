@@ -1,5 +1,34 @@
 .row
   .span3
+    .block.top-bottom-ten-margin
+      -if signed_in?
+        .box_top
+          .box_tr{:style=> "background: #fff"} 
+          .box_tl
+          .box_tm{:style=> "background: #fff"} 
+        .box_mid.threecol
+          .colmid
+            .box_ml
+              .box_mm
+                .box_mc{:style=> "background: #fff"}
+                  .tbold.block 
+                    = current_user.name
+                    || 
+                    %a{:href => "/signout"}
+                      signout
+                    %br
+                    %a{:href => "/admin"}
+                      Admin Page
+                          
+
+
+        .box_bottom
+          .box_br 
+          .box_bl
+          .box_bm     
+
+.row
+  .span3
 
     .t1em.tbold.bottom-ten-margin
       Sign up for our mailing list
