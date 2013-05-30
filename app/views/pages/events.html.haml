@@ -1,7 +1,7 @@
 .container
   .row
     .span9
-      %h2
+      .top-twenty-margin.t2em
         Upcoming Events
       .row
         .span6
@@ -26,7 +26,7 @@
           .row
             .span9
               
-              %h2
+              .top-twenty-margin.t2em
                 Events around Edinburgh  
               - @date = @otc_events.first["start"]["rfc2882local"]
               - @otc_events.each do |otc_event|
