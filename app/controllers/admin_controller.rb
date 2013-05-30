@@ -7,6 +7,7 @@ class AdminController < ApplicationController
    @users = User.all
    @pages = Page.all
    @posts = Post.all
+   @tenants = Tenant.all
   end
   
   

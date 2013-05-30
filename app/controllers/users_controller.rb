@@ -16,7 +16,7 @@ class UsersController < ApplicationController
           sign_in @user
         end
         flash[:notice] = "successfully created new user"
-        render "/admin"
+        redirect_to "/admin"
      else
         render :action => "new"
      end
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update_attributes(params[:page])
+    if @user.update_attributes(params[:user])
       flash[:success] = "User updated."
       redirect_to "/admin"
     else

@@ -41,7 +41,7 @@ class JobsController < ApplicationController
 
   def update
     @job = Job.find(params[:id])
-    if @job.update_attributes(params[:Job])
+    if @job.update_attributes(params[:job])
       flash[:success] = "Job updated."
       redirect_to "/admin"
     else

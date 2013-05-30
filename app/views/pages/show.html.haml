@@ -1,15 +1,27 @@
 .container
   .row
     .span9
-      .row
-        .span12
-          %h2
-            =@page.title
-        
-      .row
-        .span12
-          =@page.body.html_safe
-          .block  
-            =params
+      .box_top
+        .box_tr{:style=> "background: #fff"} 
+        .box_tl
+        .box_tm{:style=> "background: #fff"} 
+      .box_mid.threecol
+        .colmid
+          .box_ml
+            .box_mm
+              .box_mc{:style=> "background: #fff"}
+                %h2
+                  =@page.title
+                .top-twenty-margin
+                  =@page.body.html_safe  
+
+      .box_bottom
+        .box_br 
+        .box_bl
+        .box_bm
+      
+      
+          
+
     .span3
       =render :partial => "layouts/sidebar"

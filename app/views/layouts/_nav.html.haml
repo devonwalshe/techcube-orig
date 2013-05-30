@@ -40,17 +40,25 @@
   -else
     .nav-item
       %a{:href=>"/events", :style => "color:#fff"}
-        Events        
-  -if params[:controller] == "jobs"
+        Events
+  -if params[:controller] == "tenants"
     .nav-item.nav-item-active
-      %a{:href=>"/jobs", :style => "color:#fff"}
-        Jobs
+      %a{:href=>"/tenants", :style => "color:#fff"}
+        Tenants
   -else
     .nav-item
-      %a{:href=>"/jobs", :style => "color:#fff"}
-        Jobs
+      %a{:href=>"/tenants", :style => "color:#fff"}
+        Tenants              
+  -# -if params[:controller] == "jobs"
+  -#   .nav-item.nav-item-active
+  -#     %a{:href=>"/jobs", :style => "color:#fff"}
+  -#       Jobs
+  -# -else
+  -#   .nav-item
+  -#     %a{:href=>"/jobs", :style => "color:#fff"}
+  -#       Jobs 
 
-  -Page.all.each do |page|
+  -Page.order("id ASC").all.each do |page|
     -if params[:url] == page.url
       .nav-item.nav-item-active
         %a{:href=>"/#{page.url}", :style => "color:#fff"}
