@@ -20,7 +20,7 @@
       -elsif params[:url] == "community"
         .block.top-bottom-ten-margin{:style => "height:255px; background:url('/assets/headers/community.jpg');"}
           =render :partial => "/layouts/nav"
-      -elsif params[:url] == "tenants"
+      -elsif params[:controller] == "tenants"
         .block.top-bottom-ten-margin{:style => "height:255px; background:url('/assets/headers/tenants.jpg');"}
           =render :partial => "/layouts/nav"
       -elsif params[:url] == "press"

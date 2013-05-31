@@ -5,8 +5,7 @@
       -@posts[0..-1].each do |post|
         .row
           .span9
-            .t2em.top-twenty-margin
-              =post.updated_at.strftime("%A %B %m, %Y // %H:%M:%S")
+
             .box_top
               .box_tr 
               .box_tl
@@ -16,10 +15,13 @@
                 .box_ml
                   .box_mm
                     .box_mc{:style=> "background: #fff"}
-                      .t2em.top-twenty-margin
+                      .t2em
                         %a{:href => "/news/#{post.to_url}"}
                           =post.title
-                      %div.muli.t0-8em
+                      .tgrey
+                        Posted on:
+                        =post.updated_at.strftime("%A %B %m, %Y")
+                      %div.muli.t0-8em.top-twenty-margin
                         =truncate_html post.body.html_safe, length: 150, omission: '...(continued)'
                       .block.ten-padding
                         %a{:href => "/news/#{post.to_url}"}

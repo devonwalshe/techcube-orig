@@ -1,13 +1,4 @@
-// Place all the styles related to the Home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 
-*= require_self
-*= require_tree .
-*= require foundation_and_overrides
-*= require layout
-*= require bootstrap-datepicker 
-*/
 
 h2{
   font-family:"Miso";
@@ -52,7 +43,7 @@ position:relative; left:235px; top:125px; color:#fff; width: 715px; height: 100p
 
 .nav-item-active{
   background-color:rgba(19,159,219,0.3);
-  font-weight:bold;
+  font-weight:normal;
 }
 
 

@@ -10,8 +10,13 @@
           .box_ml
             .box_mm
               .box_mc{:style=> "background: #fff"}
-                %h2
-                  =@page.title
+                -if params[:url] == "community"
+                  %h2 Edinburgh Startups and TechCube
+                  <iframe src="http://player.vimeo.com/video/55596624?title=0&amp;byline=0&amp;portrait=0" width="660" height="270" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                -if params[:url] == "press"
+                  
+                  %a.btn.t1-4em.pull-right{:href => "http://techcube.s3.amazonaws.com/techcube_press_pack.zip"}
+                    Download TechCube Press Pack
                 .top-twenty-margin
                   =@page.body.html_safe  
 
@@ -20,8 +25,29 @@
         .box_bl
         .box_bm
       
-      
-          
+      -if params[:url] == "community"
+        .box_top.top-twenty-margin
+          .box_tr{:style=> "background: #fff"} 
+          .box_tl
+          .box_tm{:style=> "background: #fff"} 
+        .box_mid.threecol
+          .colmid
+            .box_ml
+              .box_mm
+                .box_mc{:style=> "background: #fff"}
+                  %h2 
+                    Open Tech Map - Edinburgh
+                  .top-bottom-ten-margin
+                    This is a curated list of venues, shops, visitor attractions and workspaces of interest to the tech community. Feel free to    
+                    %a{:href => "https://maps.google.com/maps/ms?msid=208575672597787690100.0004d61a88f2602497014&msa=0"}
+                      collaborate
+                    on the map and add your favorite places.
+                  <iframe width="655" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps/ms?msa=0&amp;msid=208575672597787690100.0004d61a88f2602497014&amp;ie=UTF8&amp;t=t&amp;ll=55.946749,-3.185434&amp;spn=0.016822,0.056219&amp;z=14&amp;output=embed"></iframe>
+
+        .box_bottom
+          .box_br 
+          .box_bl
+          .box_bm                             
 
     .span3
       =render :partial => "layouts/sidebar"

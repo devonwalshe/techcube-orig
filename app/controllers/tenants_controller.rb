@@ -4,7 +4,7 @@ class TenantsController < ApplicationController
   before_filter :authenticate, :only => [:new, :edit, :update, :destroy]
   
   def index
-    @tenants = Tenant.all
+    @tenants = Tenant.order("name ASC").all
     render "pages/tenants"
   end
 
