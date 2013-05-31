@@ -21,8 +21,8 @@
 
 tinymce.init({
     selector: "textarea",
-    plugins: "fullscreen wordcount media image preview code table link textcolor iframe",
-    toolbar: "bold italic underline strikethrough subscript superscript | forecolor backcolor styleselect fontsizeselect outdent indent numlist bullist alignleft aligncenter alignright alignjustify | selectall removeformat | link blockquote  undo redo fullscreen media iframe image code preview ",
+    plugins: "fullscreen wordcount media image preview code table link textcolor",
+    toolbar: "bold italic underline strikethrough subscript superscript | forecolor backcolor styleselect fontsizeselect outdent indent numlist bullist alignleft aligncenter alignright alignjustify | selectall removeformat | link blockquote  undo redo fullscreen media image code preview ",
     toolbar2: "table tableprops deletetable cell row column wordcount link",
     extended_valid_elements : "iframe[src|width|height|name|align]",
     style_formats: [{title: 'Open Sans', inline: 'span', styles: { 'font-family':'Open Sans'}},
