@@ -1,0 +1,75 @@
+.container
+  .row
+    .span12
+      %h1.twhite.miso 
+        New Tenant
+
+      = form_for @tenant do |f|
+        .row
+          .span12
+            .box_top
+              .box_tr{:style=> "background: #fff"} 
+              .box_tl
+              .box_tm{:style=> "background: #fff"} 
+            .box_mid.threecol
+              .colmid
+                .box_ml
+                  .box_mm
+                    .box_mc{:style=> "background: #fff"}
+                      .row
+                        .span5
+                     
+                          %h2.miso
+                            Company Name
+                          = f.text_field :name
+                          %h2.miso
+                            Website                    
+                          = f.text_field :website 
+                          %h2.miso
+                            Logo link
+                          %br
+                          = f.text_field :logo
+                          %h2.miso
+                            Tenant Type      
+                          = f.select :tenant_type, ["office", "co-working", "hotdesking"]
+                        .span6
+                          %h2.miso
+                            Main Contact 
+                          = f.text_field :principal_contact_name
+                          %h2.miso
+                            Contact Email      
+                          = f.text_field :contact_email
+                          %h2.miso
+                            Room Number      
+                          = f.text_field :room_number
+
+                      
+                      
+                      %h2.miso
+                        Description      
+                      = f.text_area :description                
+
+
+            .box_bottom
+              .box_br 
+              .box_bl
+              .box_bm        
+          
+        .inline-block
+          .box_top.top-twenty-margin
+            .box_tr{:style=> "background: rgb(19,159,219)"} 
+            .box_tl
+            .box_tm{:style=> "background: rgb(19,159,219)"} 
+          .box_mid.threecol
+            .colmid
+              .box_ml
+                .box_mm
+                  .box_mc{:style=> "background: rgb(19,159,219); padding: 3px 20px 5px 15px"}
+                    .block.t1-4em
+                      = f.submit "Create Tenant", :class => "button-nostyle miso t1-2em"
+
+
+          .box_bottom
+            .box_br 
+            .box_bl
+            .box_bm

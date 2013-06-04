@@ -1,0 +1,62 @@
+/* column container */
+.box_mid {
+	position:relative;	/* This fixes the IE7 overflow hidden bug */
+	clear:both;
+	float:left;
+	width:100%;			/* width of whole page */
+	overflow:hidden;		/* This chops off any overhanging divs */
+}
+
+.box_ml {
+	background: url('/assets/box/tcbox_l.png');	/* left column background colour */
+  float:left;
+	width:100%;			/* width of page */
+	position:relative;
+
+}  
+
+.box_mm {
+	width:100%;			/* width of center column content (column width minus padding on either side) */
+	left:8px;			/* 100% plus left padding of center column */
+  float:left;
+  position:relative;  
+  background: #fff;
+} 
+
+.box_mc {
+  padding: 10px 20px 10px 10px;
+}
+
+.box_top{
+  display:block;
+  clear:both;
+}
+
+.box_tr{
+  float:right; padding: 0px 0px 0px 4px; width: 4px; height: 8px; background: #fff;
+   }
+    
+.box_tl {
+  float:left; padding: 0px 4px 0px 0px; width: 4px; height: 8px; background: url('/assets/box/tcbox_tl.png'); 
+   }
+   
+.box_tm{
+  top:8px; margin-left:8px; margin-right:8px; height: 8px; background: #fff ;
+  }
+
+.box_bottom{
+  display:block;
+  clear:both;
+}
+
+.box_br{
+  float:right; padding: 0px 0px 0px 4px; width: 4px; height: 8px; background: url('/assets/box/tcbox_br.png');
+   }
+    
+.box_bl {
+  float:left; padding: 0px 4px 0px 0px; width: 4px; height: 8px; background: url('/assets/box/tcbox_bl.png'); 
+   }
+   
+.box_bm{
+  top:8px; margin-left:8px; margin-right:8px; height: 8px; background: url('/assets/box/tcbox_b.png');
+  }       

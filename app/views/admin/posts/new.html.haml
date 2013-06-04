@@ -1,0 +1,69 @@
+.container
+  .row
+    .span12
+      %h2.miso.twhite
+        New post Form
+  .row
+    .span12
+    
+      = form_for @post do |f|
+        %h2.twhite.miso
+          Title
+        
+        .box_top.top-ten-margin
+          .box_tr{:style=> "background: #fff"} 
+          .box_tl
+          .box_tm{:style=> "background: #fff"} 
+        .box_mid.threecol
+          .colmid
+            .box_ml
+              .box_mm
+                .box_mc{:style=> "background: #fff"}
+                  
+                  = f.text_field :title, :class => "fill"
+        .box_bottom
+          .box_br 
+          .box_bl
+          .box_bm
+        
+        
+        = f.hidden_field :user_id, :value => current_user.id if signed_in?
+        %h2.twhite.miso
+          Content
+        
+        .box_top.top-ten-margin
+          .box_tr{:style=> "background: #fff"} 
+          .box_tl
+          .box_tm{:style=> "background: #fff"} 
+        .box_mid.threecol
+          .colmid
+            .box_ml
+              .box_mm
+                .box_mc{:style=> "background: #fff"}
+                  = f.text_area :body, :class => "tinymce", :rows => "15", :cols => "300"
+                  = tinymce 
+            
+        .box_bottom
+          .box_br 
+          .box_bl
+          .box_bm
+       
+        
+        .inline-block
+          .box_top.top-twenty-margin
+            .box_tr{:style=> "background: rgb(19,159,219)"} 
+            .box_tl
+            .box_tm{:style=> "background: rgb(19,159,219)"} 
+          .box_mid.threecol
+            .colmid
+              .box_ml
+                .box_mm
+                  .box_mc{:style=> "background: rgb(19,159,219); padding: 3px 20px 5px 15px"}
+                    .block.t1-4em
+                      = f.submit "Create Post", :class => "button-nostyle miso t1-2em"
+
+
+          .box_bottom
+            .box_br 
+            .box_bl
+            .box_bm

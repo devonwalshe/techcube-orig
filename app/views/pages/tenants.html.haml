@@ -1,0 +1,30 @@
+.container
+  .row
+    .span9
+      .row
+        -@tenants.each do |tenant|
+          .span3
+            .top-ten-margin
+              &nbsp;
+            .box_top
+              .box_tr{:style=> "background: #fff"} 
+              .box_tl
+              .box_tm{:style=> "background: #fff"} 
+            .box_mid.threecol
+              .colmid
+                .box_ml
+                  .box_mm
+                    .box_mc{:style=> "background: #fff"}
+                      %a{:href => "#{tenant.website}"}
+                        -# .center
+                        -#   =tenant.name   
+                        .center
+                          =image_tag("#{tenant.logo}", :size => "200x200") 
+
+            .box_bottom
+              .box_br 
+              .box_bl
+              .box_bm
+      
+    .span3
+      =render :partial => "layouts/sidebar"

@@ -1,0 +1,69 @@
+
+
+.block
+  .pull-right.twhite.t0-8em{:style => "position:relative; top:26px; right:5px; line-height:100%; font-family:'MisoLight'"}
+    1 Summerhall Place
+    %br
+    Edinburgh EH9 1PL
+    %br
+    info@techcu.be
+    %br
+    +44 131 650 2003
+  .pull-right.top-twenty-margin{:style => "position:relative; top:67px; right:-85px"}
+    %a{:href => "http://www.facebook.com/edtechcube"}
+      =image_tag("/assets/f_logo.png", :size=>"25x25")
+    %a{:href => "http://www.twitter.com/edtechcube"}
+      =image_tag("/assets/t_logo.png", :size=>"40x40") 
+#nav-bar.block{:style => "position:relative; left:235px; top:185px; width: 715px; height: 100px"}
+  -if params[:controller] == "home" and params[:action] == "index"
+    .nav-item.nav-item-active
+      %a{:href=>"/", :style => "color:#fff"}
+        Home
+  -else
+    .nav-item
+      %a{:href=>"/", :style => "color:#fff"}
+        Home
+
+
+  -if params[:action] == "news"
+    .nav-item.nav-item-active
+      %a{:href=>"/news", :style => "color:#fff"}
+        News
+  -else
+    .nav-item
+      %a{:href=>"/news", :style => "color:#fff"}
+        News
+  -if params[:controller] == "events"
+    .nav-item.nav-item-active
+      %a{:href=>"/events", :style => "color:#fff"}
+        Events
+  -else
+    .nav-item
+      %a{:href=>"/events", :style => "color:#fff"}
+        Events
+  -if params[:controller] == "tenants"
+    .nav-item.nav-item-active
+      %a{:href=>"/tenants", :style => "color:#fff"}
+        Tenants
+  -else
+    .nav-item
+      %a{:href=>"/tenants", :style => "color:#fff"}
+        Tenants              
+  -# -if params[:controller] == "jobs"
+  -#   .nav-item.nav-item-active
+  -#     %a{:href=>"/jobs", :style => "color:#fff"}
+  -#       Jobs
+  -# -else
+  -#   .nav-item
+  -#     %a{:href=>"/jobs", :style => "color:#fff"}
+  -#       Jobs 
+
+  -Page.order("id ASC").all.each do |page|
+    -if params[:url] == page.url
+      .nav-item.nav-item-active
+        %a{:href=>"/#{page.url}", :style => "color:#fff"}
+          =page.title
+    -else
+      .nav-item
+        %a{:href=>"/#{page.url}", :style => "color:#fff"}
+          =page.title

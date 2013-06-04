@@ -1,0 +1,263 @@
+.container
+  .row
+    .span12
+      %h1.miso.twhite
+        Admin area
+  
+  .row
+    .span12
+      .inline-block.tbold.twhite.miso.top-twenty-margin{:style => "font-size:2em;"}
+        News Posts   
+      %a{:href => "admin/posts/new"}
+        {+ new post}
+  .row
+    .span12
+      .box_top.top-ten-margin
+        .box_tr{:style=> "background: #fff"} 
+        .box_tl
+        .box_tm{:style=> "background: #fff"} 
+      .box_mid.threecol
+        .colmid
+          .box_ml
+            .box_mm
+              .box_mc{:style=> "background: #fff"}
+                .row
+                  .tbold.t1-2em
+                    .span6
+                      Title
+                    .span2
+                      Author
+                    .span3
+                      Tools    
+                -@posts.each do |post|
+                  .row
+                    .span6
+                      =post.title
+                    .span2
+                      =post.user.name if post.user
+                    .span3
+                      .inline
+                        %a{:href => "news/#{post.to_url}"}
+                          View Post
+                        || 
+                        %a{:href => "admin/posts/edit/#{post.id}"}
+                          Edit
+                        ||
+                        =button_to 'Delete', post, :method => :delete, :confirm => "This will permanently delete the post, are you sure?",   :class=>"nostyle"   
+
+      .box_bottom
+        .box_br 
+        .box_bl
+        .box_bm
+      
+
+  .row
+    .span12
+      .inline-block.miso.twhite.tbold.top-twenty-margin{:style => "font-size:2em;"}
+        Pages   
+      %a{:href => "admin/pages/new"}
+        {+ new page}
+  .row
+    .span12
+      .box_top.top-ten-margin
+        .box_tr{:style=> "background: #fff"} 
+        .box_tl
+        .box_tm{:style=> "background: #fff"} 
+      .box_mid.threecol
+        .colmid
+          .box_ml
+            .box_mm
+              .box_mc{:style=> "background: #fff"}
+                .row
+                  .tbold.t1-2em
+                    .span6
+                      Title
+                    .span2
+                      URL
+                    .span3
+                      Tools    
+                -@pages.each do |page|
+                  .row
+                    .span6
+                      =page.title
+                    .span2
+                      =page.url
+                    .span3
+                      %a{:href => "#{page.url}"}
+                        View Page
+                      || 
+                      %a{:href => "admin/pages/edit/#{page.id}"}
+                        Edit
+                      ||
+                      -# =button_to 'Delete', page, :method => :delete, :confirm => "This will permanently delete the post, are you sure?",   :class=>"nostyle"
+                                
+      .box_bottom
+        .box_br 
+        .box_bl
+        .box_bm
+      
+          
+  .row
+    .span12
+      .inline-block.tbold.miso.twhite.top-twenty-margin{:style => "font-size:2em;"}
+        Users   
+      %a{:href => "admin/users/new"}
+        {+ new user}  
+  .row 
+    .span12
+      .box_top.top-ten-margin
+        .box_tr{:style=> "background: #fff"} 
+        .box_tl
+        .box_tm{:style=> "background: #fff"} 
+      .box_mid.threecol
+        .colmid
+          .box_ml
+            .box_mm
+              .box_mc{:style=> "background: #fff"}
+                .row
+                  .tbold.t1-2em
+                    .span3
+                      name
+                    .span3
+                      email
+                    .span2
+                      admin?
+                    .span3
+                      tools
+                -@users.each do |user|
+                  .row
+                    .span3
+                      =user.name
+                    .span3
+                      =user.email
+                    .span2
+                      =user.admin?
+                    .span3
+
+                      %a{:href => "admin/users/edit/#{user.id}"}
+                        Edit
+                      ||   
+                      =button_to 'Delete', user, :method => :delete, :confirm => "This will permanently delete the post, are you sure?",   :class=>"nostyle"          
+
+      .box_bottom
+        .box_br 
+        .box_bl
+        .box_bm
+  
+  .row
+    .span12
+      .inline-block.tbold.twhite.miso.top-twenty-margin{:style => "font-size:2em;"}
+        Tenants  
+      %a{:href => "/admin/tenants/new"}
+        {+ new tenant}
+  .row
+    .span12
+      .box_top.top-ten-margin
+        .box_tr{:style=> "background: #fff"} 
+        .box_tl
+        .box_tm{:style=> "background: #fff"} 
+      .box_mid.threecol
+        .colmid
+          .box_ml
+            .box_mm
+              .box_mc{:style=> "background: #fff"}
+                .row
+                  .tbold.t1-2em
+                    .span2
+                      Name
+                    .span3
+                      Website
+                    .span1
+                      Type
+                    .span2
+                      Contact
+
+                    .span2
+                      Tools
+                -@tenants.each do |tenant|
+                  .row
+                    .span2
+                      =tenant.name
+                    .span3
+                      =tenant.website
+                    .span1
+                      =tenant.tenant_type
+                    .span2
+                      =tenant.principal_contact_name
+
+                    .span2
+                      .inline
+                        
+                        || 
+                        %a{:href => "admin/tenants/edit/#{tenant.id}"}
+                          Edit
+                        ||
+                        =button_to 'Delete', tenant, :method => :delete, :confirm => "This will permanently delete the tenant, are you sure?",   :class=>"nostyle"   
+
+      .box_bottom
+        .box_br 
+        .box_bl
+        .box_bm   
+                     
+  .row
+    .span12
+      .inline-block.tbold.miso.twhite.top-twenty-margin{:style => "font-size:2em;"}
+        Jobs   
+      %a{:href => "admin/jobs/new"}
+        {+ new job}
+  .row
+    .span12
+      .box_top.top-ten-margin
+        .box_tr{:style=> "background: #fff"} 
+        .box_tl
+        .box_tm{:style=> "background: #fff"} 
+      .box_mid.threecol
+        .colmid
+          .box_ml
+            .box_mm
+              .box_mc{:style=> "background: #fff"}
+                .row
+                  .tbold.t1-2em
+                    .span2
+                      Company
+                    .span2
+                      Job Title
+                    .span1
+                      Location
+                    .span1
+                      Salary
+                    .span1
+                      Live
+                    .span1
+                      Expires
+                    .span3
+                      Tools 
+
+                -@jobs.each do |job|
+                  .row
+                    .span2
+                      =job.company_name
+                    .span2
+                      =job.job_title
+                    .span1
+                      =job.location
+                    .span1
+                      =job.salary
+                    .span1
+                      =job.live_date.strftime("%-d/%-m/%y")
+                    .span1
+                      =job.expiry_date.strftime("%-d/%-m/%y")
+                    .span3
+                      %a{:href => "/jobs/#{job.to_url}"}
+                        View Page
+                      || 
+                      %a{:href => "admin/jobs/edit/#{job.id}"}
+                        Edit
+                      ||
+                      =button_to 'Delete', job, :method => :delete, :confirm => "This will permanently delete the post, are you sure?",   :class=>"nostyle" 
+
+      .box_bottom
+        .box_br 
+        .box_bl
+        .box_bm
+      

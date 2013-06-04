@@ -1,16 +1,101 @@
 .row
   .span3
-    .dosis.tw400.t2-5em.bottom-ten-margin
-      Stay up to date
+
+.row
+  .span3
+
     .t1em.tbold.bottom-ten-margin
       Sign up for our mailing list
     = form_for @contact, :url => url_for(:controller => 'contacts', :action => 'create') do |f|
-      = f.text_field :name,  :placeholder => "name"
-      = f.text_field :email, :placeholder => "email", :class=>"small"
-      = f.label :iama, "I am"
-      = f.select :iama, ["working in a startup", "an investor", "a freelancer", "working in professional services", "a student", "just interested"]
-      %br
-      = f.submit "Sign up", :class=>"btn btn-success pull-right"
-     
+      .box_top
+        .box_tr 
+        .box_tl
+        .box_tm{:style=> "background: #fff"} 
+      .box_mid.threecol
+        .colmid
+          .box_ml
+            .box_mm
+              .box_mc{:style=> "background: #fff"}
+                = f.text_field :name,  :placeholder => "name", :class => "simplebox miso"
+
+      .box_bottom
+        .box_br 
+        .box_bl
+        .box_bm
+      
+      .box_top
+        .box_tr 
+        .box_tl
+        .box_tm{:style=> "background: #fff"} 
+      .box_mid.threecol
+        .colmid
+          .box_ml
+            .box_mm
+              .box_mc{:style=> "background: #fff"}
+                = f.text_field :email, :placeholder => "email", :class=>"simplebox miso"
+
+      .box_bottom
+        .box_br 
+        .box_bl
+        .box_bm    
+      
+      .t1em.tbold.top-bottom-ten-margin
+        I am
+
+      = f.select :iama, ["working in a startup", "an investor", "a freelancer", "working in professional services", "a student", "just interested"], {}, :class => "miso"     
+                  
+      
+      .pull-right.top-ten-margin.w100
+
+        .box_top
+          .box_tr{:style=> "background: rgb(19,159,219)"} 
+          .box_tl
+          .box_tm{:style=> "background: rgb(19,159,219)"} 
+        .box_mid.threecol
+          .colmid
+            .box_ml
+              .box_mm
+                .box_mc{:style=> "background: rgb(19,159,219); padding: 4px 10px 7px 15px"}
+                  .block.t1-4em
+                    = f.submit "Sign up", :class => "button-nostyle miso t1-2em"
+                  
+                  
+        .box_bottom
+          .box_br 
+          .box_bl
+          .box_bm
+
+.row
+  .span3
+    .top-twenty-margin
+      =render :partial => "/layouts/map"
+
+.row
+  .span3
+    .block.top-bottom-ten-margin
+      -if signed_in?
+        .box_top
+          .box_tr{:style=> "background: #fff"} 
+          .box_tl
+          .box_tm{:style=> "background: #fff"} 
+        .box_mid.threecol
+          .colmid
+            .box_ml
+              .box_mm
+                .box_mc{:style=> "background: #fff"}
+                  .tbold.block 
+                    = current_user.name
+                    || 
+                    %a{:href => "/signout"}
+                      signout
+                    %br
+                    %a{:href => "/admin"}
+                      Admin Page
+                          
 
 
+        .box_bottom
+          .box_br 
+          .box_bl
+          .box_bm     
+    

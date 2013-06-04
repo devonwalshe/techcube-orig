@@ -1,0 +1,48 @@
+.container
+  .row
+    .span9
+      .box_top
+        .box_tr{:style=> "background: #fff"} 
+        .box_tl
+        .box_tm{:style=> "background: #fff"} 
+      .box_mid.threecol
+        .colmid
+          .box_ml
+            .box_mm
+              .box_mc{:style=> "background: #fff"}
+                .top-twenty-margin.t2em
+                  Tech Events in Edinburgh
+                .top-ten-margin.t1em
+                  Event listings are provided by
+                  %a{:href => "http://www.opentechcalendar.co.uk"}
+                    Open Tech Calendar,
+                  a user editable calendar of the local tech meet ups. Visit the site to add your event here or check out local tech events in your city.  
+
+      .box_bottom.bottom-twenty-margin
+        .box_br 
+        .box_bl
+        .box_bm
+
+      - @date = @otc_events.first["start"]["rfc2882local"]
+      - @otc_events.each do |otc_event|
+
+        .box_top
+          .box_tr{:style=> "background: #fff"} 
+          .box_tl
+          .box_tm{:style=> "background: #fff"} 
+        .box_mid.threecol
+          .colmid
+            .box_ml
+              .box_mm
+                .box_mc{:style=> "background: #fff"}
+                  =render :partial => "layouts/event", :locals => {:otc_event => otc_event}
+          .box_bottom.bottom-twenty-margin
+            .box_br 
+            .box_bl
+            .box_bm                                                  
+
+    .span3
+      =render :partial => "/layouts/sidebar"   
+  
+  
+          

@@ -1,0 +1,59 @@
+input.simplebox, input.simplebox:focus {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size:1.2em;
+  border:none !important;
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  -moz-transition: none !important;
+  -webkit-transition: none !important;
+}
+
+select.box_select{
+  background: #fff !important;
+  background-color: #fff !important;
+  border:none !important;  
+  border-radius:none !important;
+/*  -moz-appearance: none;  */
+  box-shadow: none !important;
+/*  -webkit-appearance: none;*/
+}
+
+.button-nostyle{
+  background: rgb(19,159,219) !important;
+  background-color: rgb(19,159,219) !important;
+  border:none !important;
+  margin:0;
+  padding:0;  
+  border-radius:none !important;
+  -moz-appearance: none;  
+  box-shadow: none !important;
+  -webkit-appearance: none;
+}
+
+input.fill {
+  width: 97%;
+}
+
+.button_to{
+
+  display:inline !important;
+}
+
+.nostyle{
+  background: #fff !important;
+  background-color: #fff !important;
+  border:none !important;
+  color:rgb(0,136,204);
+  margin:0;
+  padding:0;  
+  border-radius:none !important;
+  -moz-appearance: none;  
+  box-shadow: none !important;
+  -webkit-appearance: none;
+}
+
+.button_to div {
+  display: inline;
+}

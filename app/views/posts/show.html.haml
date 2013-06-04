@@ -1,0 +1,30 @@
+.container
+  .row
+    .span9
+      .box_top
+        .box_tr{:style=> "background: #fff"} 
+        .box_tl
+        .box_tm{:style=> "background: #fff"} 
+      .box_mid.threecol
+        .colmid
+          .box_ml
+            .box_mm
+              .box_mc{:style=> "background: #fff"}
+                %h2
+                  =@post.title
+                Posted on: 
+                =@post.updated_at.strftime("%A %B %m, %Y // %H:%M:%S")
+                .top-twenty-margin.muli.t0-8em
+                  =@post.body.html_safe
+                -if signed_in?
+                  .pull-right
+                    %a{:href => "/admin/posts/edit/#{@post.id}"}
+                      Edit this post
+
+      .box_bottom
+        .box_br 
+        .box_bl
+        .box_bm
+
+    .span3
+      =render :partial => "layouts/sidebar"

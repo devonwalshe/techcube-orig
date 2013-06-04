@@ -1,8 +1,49 @@
-// Place all the styles related to the Home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 
-*= require bootstrap-datepicker 
+
+h2{
+  font-family:"Miso";
+}
+
+.nav-block{
+position:relative; left:235px; top:125px; color:#fff; width: 715px; height: 100px; font-size:1.3em;
+}
+
+@font-face {
+  font-family:"Miso";
+  src:url("/miso/miso.eot?") format("eot"),url("/miso/miso.woff") format("woff"),url("/miso/miso.ttf") format("truetype"),url("/miso/miso.svg#Miso") format("svg");
+  font-weight:normal;
+  font-style:normal;
+  }
+
+@font-face {
+  font-family:"MisoBold";
+  src:url("/miso/miso-bold.eot?") format("eot"),url("/miso/miso-bold.woff") format("woff"),url("/miso/miso-bold.ttf") format("truetype"),url("/miso/miso-bold.svg#Miso-Bold") format("svg");
+  font-weight:normal;
+  font-style:normal;}
+
+ 
+@font-face {
+  font-family:"MisoLight";
+  src:url("/miso/miso-light.eot?") format("eot"),url("/miso/miso-light.woff") format("woff"),url("/miso/miso-light.ttf") format("truetype"),url("/miso/miso-light.svg#Miso-Light") format("svg");
+  font-weight:normal;
+  font-style:normal;}
+
+
+
+#nav-bar{
+  
+  position:relative; left:235px; top:110px; color:#fff; width: 715px; height: 100px; font-size:1.2em;   
+}
+ 
+.nav-item{
+  height:60px; color:#fff; display:inline-block; padding: 10px 10px 0px 10px; font-size:1.2em; font-family:'MisoLight';
+}
+
+.nav-item-active{
+  background-color:rgba(19,159,219,0.3);
+  font-weight:normal;
+}
+
 
 .tumblr_posts {
   
@@ -26,6 +67,7 @@
 } 
 
 .read_more_container {
+                 
   
-  
+
 }

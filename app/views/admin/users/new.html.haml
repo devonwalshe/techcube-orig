@@ -1,0 +1,63 @@
+.container
+  .row
+    .span12
+      %h1.twhite.miso 
+        New User
+
+      = form_for @user do |f|
+        .row
+          .span4
+            .box_top
+              .box_tr{:style=> "background: #fff"} 
+              .box_tl
+              .box_tm{:style=> "background: #fff"} 
+            .box_mid.threecol
+              .colmid
+                .box_ml
+                  .box_mm
+                    .box_mc{:style=> "background: #fff"}
+                      Admin?
+                      %br
+                      = f.check_box :admin                     
+                      %h2.miso
+                        Name
+                      = f.text_field :name
+                      %h2.miso
+                        Email                    
+                      = f.text_field :email
+                      %h2.miso
+                        Password 
+                      = f.password_field :password
+                                      
+                      %h2.miso
+                        Confirm Password      
+                      = f.password_field :password_confirmation
+
+
+            .box_bottom
+              .box_br 
+              .box_bl
+              .box_bm        
+          
+        .inline-block
+          .box_top.top-twenty-margin
+            .box_tr{:style=> "background: rgb(19,159,219)"} 
+            .box_tl
+            .box_tm{:style=> "background: rgb(19,159,219)"} 
+          .box_mid.threecol
+            .colmid
+              .box_ml
+                .box_mm
+                  .box_mc{:style=> "background: rgb(19,159,219); padding: 3px 20px 5px 15px"}
+                    .block.t1-4em
+                      = f.submit "Create User", :class => "button-nostyle miso t1-2em"
+
+
+          .box_bottom
+            .box_br 
+            .box_bl
+            .box_bm
+        
+                
+        
+       

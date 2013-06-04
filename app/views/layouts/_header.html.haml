@@ -1,81 +1,34 @@
 .container
   .row
-    .span9
-      .block.top-bottom-twenty-margin
-        .inline-block
-          = image_tag("/assets/logo/tc_logo_colour_header.png", :size => "500x70")
-        -# .inline-block
-        -#   .relative.t1-8em.bold{:style => "bottom:-40px; left:-170px"}
-        -#     World class startup space in Edinburgh
-          -# = image_tag("/assets/temp_logo.png", :size => "300x50")
-    .span3
-      .block{:style => "height:85px"}
-        &nbsp;
-      .block
-        %a{:href => "http://www.facebook.com/edtechcube"}
-          =image_tag("/assets/f_logo.png", :size=>"25x25")
-        %a{:href => "http://www.twitter.com/edtechcube"}
-          =image_tag("/assets/t_logo.png", :size=>"40x40")
+    .span12
 
-
+      -if params[:action] == "news"
+        .block.top-bottom-ten-margin{:style => "height:255px; background:url('/assets/headers/news.jpg');"}
+          =render :partial => "/layouts/nav"
+      -elsif params[:controller] == "home"
+        .block.top-bottom-ten-margin{:style => "height:255px; background:url('/assets/headers/home.jpg');"}
+          =render :partial => "/layouts/nav"
+      -elsif params[:controller] == "events"
+        .block.top-bottom-ten-margin{:style => "height:255px; background:url('/assets/headers/events.jpg');"}
+          =render :partial => "/layouts/nav"
+      -elsif params[:controller] == "jobs"
+        .block.top-bottom-ten-margin{:style => "height:255px; background:url('/assets/headers/jobs.jpg');"}
+          =render :partial => "/layouts/nav"
+      -elsif params[:url] == "facilities"
+        .block.top-bottom-ten-margin{:style => "height:255px; background:url('/assets/headers/facilities.jpg');"}
+          =render :partial => "/layouts/nav"
+      -elsif params[:url] == "community"
+        .block.top-bottom-ten-margin{:style => "height:255px; background:url('/assets/headers/community.jpg');"}
+          =render :partial => "/layouts/nav"
+      -elsif params[:controller] == "tenants"
+        .block.top-bottom-ten-margin{:style => "height:255px; background:url('/assets/headers/tenants.jpg');"}
+          =render :partial => "/layouts/nav"
+      -elsif params[:url] == "press"
+        .block.top-bottom-ten-margin{:style => "height:255px; background:url('/assets/headers/press.jpg');"}
+          =render :partial => "/layouts/nav" 
+      -else
+        .block.top-bottom-ten-margin{:style => "height:255px; background:url('/assets/headers/default.jpg');"}
+          =render :partial => "/layouts/nav" 
 
 .container
-  .navbar{:style=>"margin-bottom:0px"}
-    .navbar-inner
-      %ul.nav
-        -if params[:action] == "index"
-          %li.active
-            %a{:href=>"home"}
-              Home
-        -else
-          %li
-            %a{:href=>"home"}
-              Home
-        -if params[:action] == "news"
-          %li.active
-            %a{:href=>"news"}
-              News
-        -else
-          %li
-            %a{:href=>"news"}
-              News
-        -if params[:action] == "tenants"
-          %li.active
-            %a{:href=>"tenants"}
-              Tenants
-        -else
-          %li
-            %a{:href=>"tenants"}
-              Tenants
-        -if params[:action] == "community"
-          %li.active
-            %a{:href=>"community"}
-              Community
-        -else
-          %li
-            %a{:href=>"community"}
-              Community
-        -# -if params[:action] == "events"
-        -#   %li.active
-        -#     %a{:href=>"events"}
-        -#       Events
-        -# -else
-        -#   %li
-        -#     %a{:href=>"events"}
-        -#       Events
-        -# -if params[:action] == "jobs"
-        -#   %li.active
-        -#     %a{:href=>"jobs"}
-        -#       Jobs
-        -# -else
-        -#   %li
-        -#     %a{:href=>"jobs"}
-        -#       Jobs
-        -if params[:action] == "mission"
-          %li.active
-            %a{:href=>"mission"}
-              Mission
-        -else
-          %li
-            %a{:href=>"mission"}
-              Mission
+  =render :partial => "/layouts/errors"

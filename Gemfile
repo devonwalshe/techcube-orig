@@ -24,6 +24,7 @@ end
 group :development do
   gem 'debugger'
   gem 'ruby-debug19', :require => 'ruby-debug'
+  gem 'annotate'
 end
 
 gem 'haml-rails'
@@ -33,7 +34,8 @@ gem 'bootstrap-datepicker-rails'
 gem 'bootstrap-datetimepicker-rails'
 gem "mailchimp", "~> 0.0.7.alpha"
 gem 'nokogiri'
-
+gem 'truncate_html'
+gem 'tinymce-rails', :git => "https://github.com/spohlenz/tinymce-rails.git", :branch => "tinymce-4"
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130127224807) do
+ActiveRecord::Schema.define(:version => 20130530111504) do
 
   create_table "contacts", :force => true do |t|
     t.string   "email"
@@ -64,6 +64,49 @@ ActiveRecord::Schema.define(:version => 20130127224807) do
     t.datetime "start_date"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
+    t.date     "live_date"
+    t.date     "expiry_date"
+    t.string   "hours_per_week"
+    t.boolean  "techcube"
+  end
+
+  create_table "pages", :force => true do |t|
+    t.text     "body"
+    t.string   "title"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "url"
+  end
+
+  create_table "posts", :force => true do |t|
+    t.string   "title"
+    t.integer  "user_id"
+    t.text     "body"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "tenants", :force => true do |t|
+    t.string   "logo"
+    t.string   "name"
+    t.string   "website"
+    t.text     "description"
+    t.string   "contact_email"
+    t.string   "principal_contact_name"
+    t.string   "room_number"
+    t.string   "tenant_type"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "encrypted_password"
+    t.string   "salt"
+    t.boolean  "admin",              :default => false
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
   end
 
 end
