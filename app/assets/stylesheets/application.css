@@ -36,7 +36,7 @@ position:relative; left:235px; top:125px; color:#fff; width: 715px; height: 100p
 }
  
 .nav-item{
-  height:60px; color:#fff; display:inline-block; padding: 10px 10px 0px 10px; font-size:1.4em; font-family:'MisoLight';
+  height:60px; color:#fff; display:inline-block; padding: 10px 10px 0px 10px; font-size:1.2em; font-family:'MisoLight';
 }
 
 .nav-item-active{
