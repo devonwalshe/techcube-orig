@@ -17,14 +17,14 @@
         -else
           = "\tNo description was entered for this event"
 
-    - elsif otc_event["start"]["rfc2882local"] == @date
-      = "\t" + "event within the same date" 
+    -# - elsif otc_event["start"]["rfc2882local"] == @date
+    -#   = "\t" + "event within the same date"    
     - else
       .t2em.vdividerbottom
         = Date.parse(otc_event["start"]["rfc2882local"]).strftime("%A %B %d, %Y")
       .block.top-ten-margin.t1-4em
         %a{:href => "#{otc_event["siteurl"]}", :target=> "_blank"}
-          = otc_event["summary"]
+          = otc_event["summaryDisplay"]
       .block
         = "Starts at: \t"+ DateTime.parse(otc_event["start"]["rfc2882local"]).strftime("%l:%M %p")
       .block
