@@ -17,8 +17,6 @@
         -else
           = "\tNo description was entered for this event"
 
-    -# - elsif otc_event["start"]["rfc2882local"] == @date
-    -#   = "\t" + "event within the same date"    
     - else
       .t2em.vdividerbottom
         = Date.parse(otc_event["start"]["rfc2882local"]).strftime("%A %B %d, %Y")
