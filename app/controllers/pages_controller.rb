@@ -40,7 +40,7 @@ def update
 end
 
 def news
-  @posts = Post.all
+  @posts = Post.order("created_at DESC")
   render "/pages/news"
 end
 
