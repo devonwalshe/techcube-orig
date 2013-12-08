@@ -47,7 +47,7 @@ class ContactsController < ApplicationController
   
   def add_user_to_mailchimp(name, email, list)
     lists = Contact::WEBSITE_LISTS
-    mc_api = Mailchimp::API.new("07a1a65399a7f44b7be270ee3414adc1-us6")
+    mc_api = Mailchimp::new("07a1a65399a7f44b7be270ee3414adc1-us6")
     params = {
       :id => lists[list],
       :email_address => email,

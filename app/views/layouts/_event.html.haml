@@ -33,12 +33,12 @@
           = "\t" + otc_event["description"]
         -else
           = "\tNo description was entered for this event"
-      .inline.relative
-        =otc_event["location"]["address"]
-  .span2.pull-right
-    -if otc_event["location"]["lat"] != nil 
-      %a{:href => "http://maps.google.com?q=#{otc_event["location"]["address"]},#{otc_event["location"]["lng"]}"}
-        =image_tag( "http://maps.googleapis.com/maps/api/staticmap?center=#{otc_event["location"]["lat"]},#{otc_event["location"]["lng"]}&size=125x100&maptype=roadmap&markers=color:blue|#{otc_event["location"]["lat"]},#{otc_event["location"]["lng"]}&sensor=false&zoom=12", :class => "border")      
+  -#     .inline.relative
+  -#       =otc_event["location"]["address"]
+  -# .span2.pull-right
+  -#   -if otc_event["location"]["lat"] != nil 
+  -#     %a{:href => "http://maps.google.com?q=#{otc_event["location"]["address"]},#{otc_event["location"]["lng"]}"}
+  -#       =image_tag( "http://maps.googleapis.com/maps/api/staticmap?center=#{otc_event["location"]["lat"]},#{otc_event["location"]["lng"]}&size=125x100&maptype=roadmap&markers=color:blue|#{otc_event["location"]["lat"]},#{otc_event["location"]["lng"]}&sensor=false&zoom=12", :class => "border")      
 
 
 -@date = otc_event["start"]["rfc2882local"]
