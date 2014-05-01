@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.5'
+ruby "1.9.3"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -27,12 +28,12 @@ group :development do
   gem 'annotate'
 end
 
-gem 'haml-rails'
+gem 'haml-rails', "0.3.5"
 gem 'jquery-rails'
 gem 'provisioning-api'
 gem 'bootstrap-datepicker-rails'
 gem 'bootstrap-datetimepicker-rails'
-gem "mailchimp", "~> 0.0.7.alpha"
+gem "mailchimp", "0.0.7.alpha"
 gem 'nokogiri'
 gem 'truncate_html'
 gem 'tinymce-rails', :git => "https://github.com/spohlenz/tinymce-rails.git", :branch => "tinymce-4"
