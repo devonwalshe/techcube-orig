@@ -13,8 +13,8 @@ class ContactsController < ApplicationController
      @contact = Contact.new(params[:contact])
      @google_apps_connection ||= ProvisioningApi.new(GOOGLE_APPS_CONFIG['username'], GOOGLE_APPS_CONFIG['password'])
      if @contact.save
-        ListMailer.mailing_list_notification_email(@contact).deliver
-        ListMailer.mailing_list_thankyou_email(@contact).deliver
+        # ListMailer.mailing_list_notification_email(@contact).deliver
+        # ListMailer.mailing_list_thankyou_email(@contact).deliver
         add_user_to_mailchimp(@contact.name, @contact.email, :all)
         if @contact.iama == "a freelancer"
           add_user_to_mailchimp(@contact.name, @contact.email, :freelancers)

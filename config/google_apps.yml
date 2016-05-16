@@ -1,9 +1,9 @@
 development:
-  username: devon@techcu.be
-  password: alphabrodie12
-  google_domain: techcu.be
+  username: 
+  password: 
+  google_domain: 
   
 production:
-  username: devon@techcu.be
-  password: alphabrodie12
-  google_domain: techcu.be
+  username: 
+  password: 
+  google_domain: 
